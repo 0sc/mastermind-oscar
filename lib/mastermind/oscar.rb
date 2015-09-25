@@ -5,7 +5,7 @@ module Mastermind
   module Oscar
     extend self
     def mastermind
-      Mastermind::Oscar::GameManager.new.start_game
+      #Mastermind::Oscar::GameManager.new.start_game
     end
   end
 end

@@ -8,6 +8,8 @@ module Mastermind
         @difficulty = difficulty
         @printer    = printer
         @recorder   = recorder
+
+        set_read_stream (stream = STDIN)
       end
  
       def init
@@ -20,13 +22,24 @@ module Mastermind
       end
 
       def game_play
+        @max_guess  = 12
+        @guess      = 0;
+
+        while @guess < @guess 
+          input = get_first_char
+          if verify_input(input)
+
+            @guess += 1
+          else
+
+          end
+        end
         
       end
 
       def generate_code
          @code = []
          specs = difficulties(@difficulty)
-         puts specs
          @possible_colours = specs[1]
          @characters = specs[0]
 
@@ -52,7 +65,7 @@ module Mastermind
 
       def init_message
         a = (@difficulty == :beginner) ? 'a' : 'an'
-        @printer.output("I have a generated #{a} #{@difficulty} sequence with #{@characters} elements made up of:")
+        @printer.output("I have generated #{a} #{@difficulty} sequence with #{@characters} elements made up of:")
         @printer.output(create_color_string + ". Use (q)uit at any time to end the game.")
         @printer.output("what's your guess?")
       end
@@ -68,6 +81,19 @@ module Mastermind
           count += 1
         end
         string[0...-1].join(", ") + ", and " + string.last
+      end
+
+      def verify_input(input)
+        valid_inputs = %w{q c} + colors[0...@possible_colours]
+        valid_inputs.include?input
+      end
+
+      def get_first_char
+        return @stream.gets.chomp[0].downcase
+      end
+
+      def set_read_stream (stream = STDIN)
+        @stream = stream
       end
 
     end
