@@ -1,7 +1,9 @@
+require_relative "time_manager"
+
 module Mastermind
   module Oscar
     class Codemaker
-      attr_reader :code
+      attr_reader :code, :timer
       def initialize(difficulty, printer, recorder)
         @difficulty = difficulty
         @printer    = printer
@@ -10,6 +12,8 @@ module Mastermind
  
       def init
         generate_code
+        @timer = Mastermind::Oscar::TimeManager.new
+        @timer.start_timer
       end
 
       def generate_code
@@ -22,10 +26,6 @@ module Mastermind
           index = rand(0...possible_colours)
           @code << colors[index]
          end
-      end
-
-      def set_difficulty  
-
       end
 
       def difficulties(key)
@@ -41,6 +41,7 @@ module Mastermind
       def colors
         @printer.colors.keys
       end
+
     end
   end
 end

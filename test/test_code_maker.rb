@@ -3,6 +3,7 @@ require 'minitest/reporters'
 require "mastermind/oscar/codemaker"
 require "mastermind/oscar/printer"
 require "mastermind/oscar/record_manager"
+require "mastermind/oscar/time_manager"
 require "stringio"
 
 class CodemakerTest < Minitest::Test
@@ -18,5 +19,10 @@ class CodemakerTest < Minitest::Test
     p @client.code
     assert_equal(6, @client.code.length)
     assert !@client.code.include?("m")
+  end
+
+  def test_timer
+    @client.init
+    assert_instance_of(Mastermind::Oscar::TimeManager, @client.timer)
   end
 end
