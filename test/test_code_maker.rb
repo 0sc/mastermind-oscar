@@ -1,9 +1,22 @@
 require 'minitest/autorun'
 require 'minitest/reporters'
-require "mastermind/oscar"
+require "mastermind/oscar/codemaker"
+require "mastermind/oscar/printer"
+require "mastermind/oscar/record_manager"
+require "stringio"
 
-class CodeMakerTest < Minitest::Test
+class CodemakerTest < Minitest::Test
   def setup
-    #@client = CodeMaker.new
+    difficulty  = :intermediate
+    printer     = Mastermind::Oscar::Printer.new
+    recorder    = Mastermind::Oscar::RecordManager.new(difficulty,StringIO.new("Jeff\n"))
+    @client     = Mastermind::Oscar::Codemaker.new(difficulty,printer,recorder)
+  end
+
+  def test_generate_code
+    @client.generate_code
+    p @client.code
+    assert_equal(6, @client.code.length)
+    assert !@client.code.include?("m")
   end
 end

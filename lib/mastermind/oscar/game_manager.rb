@@ -3,7 +3,7 @@ module Mastermind
 		class GameManager
       attr_reader :difficulty
 
-      def initalize
+      def initialize
         set_read_stream
       end
 

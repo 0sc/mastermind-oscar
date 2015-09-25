@@ -3,9 +3,9 @@ module Mastermind
 		class RecordManager
       attr_reader :user
 			
-      def initalize(difficulty)
+      def initialize(difficulty, stream = STDIN)
 				@difficulty = difficulty
-        set_read_stream
+        set_read_stream(stream)
         set_user
 			end
 
