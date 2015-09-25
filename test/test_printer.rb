@@ -8,7 +8,7 @@ class PrinterTest < Minitest::Test
   def setup
     @client = Mastermind::Oscar::Printer.new
     @client.set_output_stream(StringIO.new)
-    @text = "busboy"
+    @text = "rgbyrcgm"
   end
 
   def colors

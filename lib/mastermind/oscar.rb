@@ -1,7 +1,12 @@
 require "mastermind/oscar/version"
+require "mastermind/oscar/game_manager"
 
 module Mastermind
   module Oscar
-    # Your code goes here...
+    def mastermind
+      puts "Called"
+      #Mastermind::Oscar::GameManager.start_game
+    end
   end
 end
+

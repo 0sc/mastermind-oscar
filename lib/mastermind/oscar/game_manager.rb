@@ -36,8 +36,9 @@ module Mastermind
 
         printer = Mastermind::Oscar::Printer.new
         recorder= Mastermind::Oscar::RecordManager.new(@difficulty)
-        
 
+        codemaker=MASTERMIND::Oscar::CodeMaker.new(printer,difficulty,recorder)
+        game = codemaker.init 
       end
 
       def get_first_char
