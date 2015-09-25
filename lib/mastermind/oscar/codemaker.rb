@@ -14,7 +14,11 @@ module Mastermind
         generate_code
         @timer = Mastermind::Oscar::TimeManager.new
         @timer.start_timer
-        #init_message
+        init_message
+      end
+
+      def game_play
+
       end
 
       def generate_code

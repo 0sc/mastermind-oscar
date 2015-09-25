@@ -1,9 +1,13 @@
+require_relative "printer"
+require_relative "codemaker"
+require_relative ""
+
 module Mastermind
 	module Oscar
 		class GameManager
       attr_reader :difficulty
 
-      def initialize
+      def initialize 
         set_read_stream
       end
 
@@ -17,6 +21,7 @@ module Mastermind
         quit = false
         while !quit
           puts "Would you like to (p)lay, read the (i)nstructions, view (s)cores or (q)uit?"
+          print "> "
           input = get_first_char
           if input == 'q'
             return
@@ -46,7 +51,7 @@ module Mastermind
       end
 
       def set_difficulty
-        puts "Choose difficulty:\n(b)eginner ()\n(i)ntermediate\n(a)dvanced\n(Invalid input will default to beginner)"
+        puts "Choose difficulty:\n(b)eginner\n(i)ntermediate\n(a)dvanced\n(Invalid input will default to beginner)"
         input = get_first_char
         if input == "a"
           @difficulty = :advanced

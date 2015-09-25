@@ -8,7 +8,7 @@ require "stringio"
 
 class CodemakerTest < Minitest::Test
   def setup
-    difficulty  = :intermediate
+    difficulty  = :beginner
     printer     = Mastermind::Oscar::Printer.new
     recorder    = Mastermind::Oscar::RecordManager.new(difficulty,StringIO.new("Jeff\n"))
     @client     = Mastermind::Oscar::Codemaker.new(difficulty,printer,recorder)
@@ -16,7 +16,7 @@ class CodemakerTest < Minitest::Test
 
   def test_generate_code
     @client.generate_code
-    assert_equal(6, @client.code.length)
+    assert_equal(4, @client.code.length)
     assert !@client.code.include?("m")
 
     timer_test
