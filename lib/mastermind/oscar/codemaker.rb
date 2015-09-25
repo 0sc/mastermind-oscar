@@ -15,15 +15,18 @@ module Mastermind
         @timer = Mastermind::Oscar::TimeManager.new
         @timer.start_timer
         init_message
+
+        return game_play
       end
 
       def game_play
-
+        
       end
 
       def generate_code
          @code = []
          specs = difficulties(@difficulty)
+         puts specs
          @possible_colours = specs[1]
          @characters = specs[0]
 

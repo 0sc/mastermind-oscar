@@ -1,4 +1,4 @@
-require_relative "oscar/version"
+#require_relative "oscar/version"
 require_relative "oscar/game_manager"
 
 module Mastermind

@@ -10,7 +10,7 @@ module Mastermind
 			end
 
       def set_user
-        puts "What's is you name?"
+        puts "What's is your name?"
         @user = @stream.gets.chomp.capitalize
       end
 

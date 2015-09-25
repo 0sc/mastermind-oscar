@@ -1,6 +1,6 @@
 require_relative "printer"
 require_relative "codemaker"
-require_relative ""
+require_relative "record_manager"
 
 module Mastermind
 	module Oscar
@@ -42,7 +42,7 @@ module Mastermind
         printer = Mastermind::Oscar::Printer.new
         recorder= Mastermind::Oscar::RecordManager.new(@difficulty)
 
-        codemaker=MASTERMIND::Oscar::CodeMaker.new(printer,difficulty,recorder)
+        codemaker = Mastermind::Oscar::Codemaker.new(difficulty,printer,recorder)
         game = codemaker.init 
       end
 
