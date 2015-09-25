@@ -23,7 +23,7 @@ module Mastermind
         }
       end
 
-      def color_letters(word)
+      def colour_letters(word)
         word = word.split("").map!{ |letter| colour_text(letter,colors[letter]) }
         word.join
       end

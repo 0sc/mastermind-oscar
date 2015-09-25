@@ -16,13 +16,20 @@ class CodemakerTest < Minitest::Test
 
   def test_generate_code
     @client.generate_code
-    p @client.code
     assert_equal(6, @client.code.length)
     assert !@client.code.include?("m")
+
+    timer_test
+
+    init_message_test
   end
 
-  def test_timer
+  def timer_test
     @client.init
     assert_instance_of(Mastermind::Oscar::TimeManager, @client.timer)
+  end
+
+  def init_message_test
+    @client.init_message
   end
 end

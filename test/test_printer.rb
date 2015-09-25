@@ -56,7 +56,7 @@ class PrinterTest < Minitest::Test
 
   def test_color_letters
     output = @text.split("").map {|x| @client.colour_text(x,@client.colors[x])}
-    assert_equal(output.join, @client.color_letters(@text))
+    assert_equal(output.join, @client.colour_letters(@text))
   end
 
 
