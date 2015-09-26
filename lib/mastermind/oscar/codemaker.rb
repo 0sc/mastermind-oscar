@@ -8,8 +8,6 @@ module Mastermind
         @difficulty = difficulty
         @printer    = printer
         @recorder   = recorder
-
-        set_read_stream (stream = STDIN)
       end
  
       def init
@@ -18,23 +16,38 @@ module Mastermind
         @timer.start_timer
         init_message
 
-        return game_play
+        #return game_play
       end
 
       def game_play
         @max_guess  = 12
         @guess      = 0;
 
-        while @guess < @guess 
-          input = get_first_char
-          if verify_input(input)
+        while @guess < @max_guess 
+          input = gets.chomp.downcase
 
+          return false if input[0] == 'q'
+
+          if input[0] == 'c'
+             @printer.output(@printer.colour_letters(code))
+          elsif verify_input(input)
             @guess += 1
-          else
-
+            status = analyze_input(input)
           end
         end
         
+      end
+
+      def analyze_input(input)
+        return true if input == @code
+
+        exact = 0
+        partial  = 0
+
+        input = input.split("")
+        @code.each_with_index do |item, index|
+
+        end
       end
 
       def generate_code
@@ -84,18 +97,13 @@ module Mastermind
       end
 
       def verify_input(input)
-        valid_inputs = %w{q c} + colors[0...@possible_colours]
-        valid_inputs.include?input
-      end
+        return true if input.length == 4
 
-      def get_first_char
-        return @stream.gets.chomp[0].downcase
-      end
+        puts "Your input is too short" if input.length < 4
+        puts "Your input is too long" if input.length > 4
 
-      def set_read_stream (stream = STDIN)
-        @stream = stream
+        false
       end
-
     end
   end
 end

@@ -21,8 +21,6 @@ class CodemakerTest < Minitest::Test
 
     timer_test
     init_message_test
-    verify_invalid_input
-    verify_valid_input
   end
 
   def timer_test
@@ -34,15 +32,15 @@ class CodemakerTest < Minitest::Test
     @client.init_message
   end
 
-  def verify_valid_input
-    input = %w{q c r g b y}
+  def test_valid_input
+    input = %w{rrrr rgbb}
     input.each do |i|
       assert @client.verify_input i
     end
   end
 
-  def verify_invalid_input
-    input = %w{t k l o j e}
+  def test_invalid_input
+    input = %w{t k l o j e} << "a"*5 
     input.each do |i|
       assert !@client.verify_input(i)
     end
