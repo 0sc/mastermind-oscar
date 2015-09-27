@@ -45,6 +45,10 @@ module Mastermind
       def set_output_stream (stream = STDOUT)
         @stream = stream 
       end
+
+      def format_input_query(text)
+        print "\n#{text}\n>\t"
+      end
     end
   end
 end

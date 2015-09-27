@@ -20,22 +20,27 @@ module Mastermind
       end
 
       def game_play
-        @max_guess  = 12
-        @guess      = 0
+        max_guess  = 12
+        @guess     = 0
 
-        while !out_of_guess? 
+        while !out_of_guess? max_guess 
           input = gets.chomp.downcase
 
           if quit?(input)
-            return false
+            return :quit
           elsif cheat?(input)
              cheat
           elsif is_valid_input?(input)
             @guess += 1
             status = analyze_input(input)
+            return congratulations if status
           end
+          @printer.output("You've taken #{@guess} out of #{max_guess} guesses.\n\n")
+          guess_again
         end
-        
+
+        #Some one that is out of guesses
+        return game_over        
       end
 
       def analyze_input(input)
@@ -81,8 +86,8 @@ module Mastermind
         @printer.output(feedback)
       end
 
-      def out_of_guess?
-        @guess > @max_guess
+      def out_of_guess?(max_guess)
+        @guess.eql? max_guess
       end
 
       def quit?(input)
@@ -94,16 +99,16 @@ module Mastermind
       end
 
       def cheat
-        @printer.output(@printer.colour_letters(@code.join))
+        @printer.output(color_code)
       end
 
       def generate_code
          @code = []
          specs = difficulties(@difficulty)
          @possible_colours = specs[1]
-         @characters = specs[0]
+         characters = specs[0]
 
-         @characters.times do
+         characters.times do
           index = rand(0...@possible_colours)
           @code << colors[index]
          end
@@ -125,9 +130,9 @@ module Mastermind
 
       def init_message
         a = (@difficulty == :beginner) ? 'a' : 'an'
-        @printer.output("I have generated #{a} #{@difficulty} sequence with #{@characters} elements made up of:")
+        @printer.output("I have generated #{a} #{@difficulty} sequence with #{code.size} elements made up of:")
         @printer.output(create_color_string + ". Use (q)uit at any time to end the game.")
-        @printer.output("what's your guess?")
+        @printer.format_input_query("what's your guess?")
       end
 
       def create_color_string
@@ -144,13 +149,34 @@ module Mastermind
       end
 
       def is_valid_input?(input)
-        return true if input.length == 4
+        length = code.size
+        return true if input.length == length
 
-        puts "Your input is too short" if input.length < 4
-        puts "Your input is too long" if input.length > 4
+        puts "Your input is too short" if input.length < length
+        puts "Your input is too long" if input.length > length
 
         false
       end
+
+      def congratulations
+        @printer.output("Congratulations! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{} minutes, 22 seconds.")
+        :won
+      end
+
+      def game_over
+        @printer.output("Game over! You've used up all your guesses. The sequence is '#{color_code}'.")
+
+        :end
+      end
+
+      def color_code
+        @printer.colour_letters(@code.join)
+      end
+
+      def guess_again
+        @printer.format_input_query "Guess again"
+      end
+
     end
   end
 end

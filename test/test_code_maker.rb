@@ -21,6 +21,10 @@ class CodemakerTest < Minitest::Test
 
     timer_test
     init_message_test
+
+    valid_input_test
+    
+    invalid_input_test
   end
 
   def timer_test
@@ -32,12 +36,12 @@ class CodemakerTest < Minitest::Test
     @client.init_message
   end
 
-  def test_valid_input
+  def valid_input_test
     input = %w{rrrr rgbb}
     input.each {|i| assert @client.is_valid_input?(i)}
   end
 
-  def test_invalid_input
+  def invalid_input_test
     input = %w{t k l o j e} << "a"*5 
     input.each {|i| assert !@client.is_valid_input?(i)}
   end
@@ -95,5 +99,7 @@ class CodemakerTest < Minitest::Test
       assert_equal(partial[index], @client.partial_match(arr, input[index], exact[index]))
     end
   end
+
+  
 
 end

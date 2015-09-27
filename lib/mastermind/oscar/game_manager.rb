@@ -9,6 +9,7 @@ module Mastermind
 
       def initialize 
         set_read_stream
+         @printer = Mastermind::Oscar::Printer.new
       end
 
       # useful for testing inputs
@@ -18,10 +19,11 @@ module Mastermind
 
       def start_game
         puts "Welcome to MASTERMIND"
-        quit = false
-        while !quit
-          puts "Would you like to (p)lay, read the (i)nstructions, view (s)cores or (q)uit?"
-          print "> "
+        status = true
+
+        while status
+          @printer.format_input_query "Would you like to (p)lay, read the (i)nstructions, view (s)cores or (q)uit?"
+
           input = get_first_char
           if input == 'q'
             return
@@ -31,19 +33,17 @@ module Mastermind
             # show instructions
           elsif input == 'p'
             # play game
-            status = play
+            status = game_on? play
           end
         end
       end
 
       def play
         set_difficulty if @difficulty.nil?
-
-        printer = Mastermind::Oscar::Printer.new
         recorder= Mastermind::Oscar::RecordManager.new(@difficulty)
 
-        codemaker = Mastermind::Oscar::Codemaker.new(difficulty,printer,recorder)
-        game = codemaker.init 
+        codemaker = Mastermind::Oscar::Codemaker.new(difficulty,@printer,recorder)
+        return codemaker.init 
       end
 
       def get_first_char
@@ -51,7 +51,8 @@ module Mastermind
       end
 
       def set_difficulty
-        puts "Choose difficulty:\n(b)eginner\n(i)ntermediate\n(a)dvanced\n(Invalid input will default to beginner)"
+        @printer.format_input_query "Choose difficulty:\n(b)eginner\n(i)ntermediate\n(a)dvanced\n(Invalid input will default to beginner)"
+
         input = get_first_char
         if input == "a"
           @difficulty = :advanced
@@ -60,6 +61,17 @@ module Mastermind
         else
           @difficulty = :beginner
         end
+      end
+
+      def game_on? (arg)
+        return false if arg == :quit
+
+        show_top_10 if arg == :won
+        return true
+      end
+
+      def show_top_10
+        puts "Shown"
       end
 
 		end
