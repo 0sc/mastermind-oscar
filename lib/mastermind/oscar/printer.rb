@@ -24,7 +24,9 @@ module Mastermind
       end
 
       def colour_letters(word)
-        word = word.split("").map!{ |letter| colour_text(letter,colors[letter]) }
+        word = word.split("") unless word.is_a?(Array)
+
+        word = word.map!{ |letter| colour_text(letter,colors[letter]) }
         word.join
       end
 

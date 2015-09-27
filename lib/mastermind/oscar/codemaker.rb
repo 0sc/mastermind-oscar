@@ -21,16 +21,16 @@ module Mastermind
 
       def game_play
         @max_guess  = 12
-        @guess      = 0;
+        @guess      = 0
 
-        while @guess < @max_guess 
+        while !out_of_guess? 
           input = gets.chomp.downcase
 
-          return false if input[0] == 'q'
-
-          if input[0] == 'c'
-             @printer.output(@printer.colour_letters(code))
-          elsif verify_input(input)
+          if quit?(input)
+            return false
+          elsif cheat?(input)
+             cheat
+          elsif is_valid_input?(input)
             @guess += 1
             status = analyze_input(input)
           end
@@ -39,15 +39,62 @@ module Mastermind
       end
 
       def analyze_input(input)
-        return true if input == @code
-
-        exact = 0
-        partial  = 0
-
         input = input.split("")
-        @code.each_with_index do |item, index|
+        return true if input == code
 
+        exact = exact_match(code, input)
+        partial = partial_match(code, input, exact)
+        exact = exact.size
+        
+        give_guess_feedback(input, exact, partial)
+
+        false
+      end
+
+      def exact_match(game_code, input)
+        exact = []
+        input.each_index do |index|
+          exact << index if game_code[index] == input[index]
         end
+        exact
+      end
+
+      def partial_match(game_code, input,exact)
+        partials = [] + game_code
+        exact.each{|elt| partials[elt] = nil}
+        partial = 0
+
+        input.each_with_index do |item, index|
+          pIndex = partials.index(item)
+
+          if(pIndex && !exact.include?(index))
+            partial += 1
+            partials[pIndex] = nil
+          end
+        end
+        partial
+      end
+
+      def give_guess_feedback(input, exact, partial)
+        feedback = "Your guess, " + @printer.colour_letters(input) + ", has #{exact + partial} of the correct elements with #{exact} in the correct positions."
+
+        @printer.output(feedback)
+      end
+
+      def out_of_guess?
+        @guess > @max_guess
+      end
+
+      def quit?(input)
+        input[0] == 'q'
+      end
+
+      def cheat?(input)
+        input[0] == 'c'
+      end
+
+      def cheat
+        @printer.output(@printer.colour_letters(@code.join))
       end
 
       def generate_code
@@ -96,7 +143,7 @@ module Mastermind
         string[0...-1].join(", ") + ", and " + string.last
       end
 
-      def verify_input(input)
+      def is_valid_input?(input)
         return true if input.length == 4
 
         puts "Your input is too short" if input.length < 4
