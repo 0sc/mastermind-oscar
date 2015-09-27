@@ -35,7 +35,7 @@ module Mastermind
             status = analyze_input(input)
             return congratulations if status
           end
-          @printer.output("You've taken #{@guess} out of #{max_guess} guesses.\n\n")
+          @printer.output("You've taken #{@guess} out of #{max_guess} guesses.\n")
           guess_again
         end
 

@@ -11,6 +11,17 @@ module Mastermind
       end
 
       def get_time
+        secs = get_seconds.to_i
+        days = secs / 86400
+        secs = secs % 86400
+      end
+
+      def evaluate(x,y)
+        [x / y, x % y] 
+      end
+
+
+      def get_seconds
         @stop - @start
       end
     end

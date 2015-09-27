@@ -3,7 +3,7 @@ require 'minitest/reporters'
 require "mastermind/oscar/codemaker"
 require "mastermind/oscar/printer"
 require "mastermind/oscar/record_manager"
-require "mastermind/oscar/time_manager"
+#require "mastermind/oscar/time_manager"
 require "stringio"
 
 class CodemakerTest < Minitest::Test
@@ -23,7 +23,7 @@ class CodemakerTest < Minitest::Test
     init_message_test
 
     valid_input_test
-    
+
     invalid_input_test
   end
 
@@ -99,7 +99,5 @@ class CodemakerTest < Minitest::Test
       assert_equal(partial[index], @client.partial_match(arr, input[index], exact[index]))
     end
   end
-
-  
 
 end
