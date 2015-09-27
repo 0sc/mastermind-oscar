@@ -71,7 +71,7 @@ module Mastermind
       end
 
       def show_top_10
-        puts "Shown"
+        
       end
 
 		end

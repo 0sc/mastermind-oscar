@@ -11,18 +11,34 @@ module Mastermind
       end
 
       def get_time
-        secs = get_seconds.to_i
-        days = secs / 86400
-        secs = secs % 86400
+        secs = get_seconds.to_i + 18290
+        days, secs = evaluate(secs, 86400)
+        hour, secs = evaluate(secs, 3600)
+        min, secs  = evaluate(secs, 60)
+
+        string = []
+        string << to_string(days, 'day')
+        string << to_string(hour, 'hour')
+        string << to_string(min, 'minute')
+        string << to_string(secs, 'sec')
+        
+        string.select!{|x| !x.nil?}
+        string.join(", ")
       end
 
       def evaluate(x,y)
         [x / y, x % y] 
       end
 
-
       def get_seconds
         @stop - @start
+      end
+
+      def to_string(time, unit)
+        return if time == 0
+
+        time > 1 ? s = 's' : s = ''
+        "#{time} #{unit}#{s} "
       end
     end
   end

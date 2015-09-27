@@ -16,7 +16,7 @@ module Mastermind
         @timer.start_timer
         init_message
 
-        #return game_play
+        return game_play
       end
 
       def game_play
@@ -159,7 +159,8 @@ module Mastermind
       end
 
       def congratulations
-        @printer.output("Congratulations! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{} minutes, 22 seconds.")
+        @timer.stop_timer
+        @printer.output("Congratulations! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{@timer.get_time}")
         :won
       end
 
