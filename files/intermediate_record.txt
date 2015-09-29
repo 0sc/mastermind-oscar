@@ -15,3 +15,20 @@ Guessed the sequence in: 27 secs
 Name:	Don jazzy
  3:50pm Sep 28, 2015
 Sequence: 	BCBGBR
+
+Name:	Rryyty
+ 2:41pm Sep 29, 2015
+Sequence: 		<RYCYRC>
+Guess 1:		RRRRYY
+Guess 2:		RRBBYY
+Guess 3:		RRYYYY
+Guess 4:		RRYYGG
+
+Name:	Oscar
+ 4:25pm Sep 29, 2015
+Sequence: 		<GYYYCG>
+Guess 1:		CYANGR
+
+Name:	Oscar
+ 8:15pm Sep 29, 2015
+Sequence: 		<RCCRGG>

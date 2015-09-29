@@ -390,3 +390,36 @@ Guess 1:		RGBY
 Guess 2:		RGBR
 Guess 3:		YGBY
 Guessed the sequence in: 34 secs
+
+Name:	Bimbo
+ 1:29pm Sep 29, 2015
+Sequence: 		<RRBB>
+Guess 1:		RRBY
+Guess 2:		RRYY
+Guess 3:		RRBB
+Guessed the sequence in: 47 secs
+
+Name:	Rryyty
+ 2:38pm Sep 29, 2015
+Sequence: 		<GBGG>
+Guess 1:		SADG
+Guess 2:		    
+Guess 3:		    
+Guess 4:		    
+Guess 5:		    
+Guess 6:		YR Y
+Guess 7:		RRRR
+Guess 8:		YYYY
+Guess 9:		GGGG
+Guess 10:		RGGG
+Guess 11:		GGGR
+Guess 12:		GBGG
+Guessed the sequence in: 1 minute, 53 secs
+
+Name:	Oscar
+ 6:45pm Sep 29, 2015
+Sequence: 		<YRRG>
+
+Name:	Oscar
+ 8:17pm Sep 29, 2015
+Sequence: 		<YRYG>

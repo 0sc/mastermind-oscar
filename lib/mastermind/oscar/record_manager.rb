@@ -14,7 +14,7 @@ module Mastermind
       end
 
       def set_user
-        print "What's is your name?\n>\t"
+        print "Awesome!, you want to play. Let's begin!\nMy name is Mastermind; What's is yours?\n>\t"
         @user = @stream.gets.chomp.capitalize
       end
 

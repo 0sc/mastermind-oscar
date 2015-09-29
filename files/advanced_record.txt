@@ -1,2 +1,6 @@
 ADVANCED
 ========
+Name:	Bingo
+ 8:29pm Sep 29, 2015
+Sequence: 		<BGCRRGMM>
+Guess 1:		RYGNGSDE

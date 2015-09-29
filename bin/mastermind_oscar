@@ -7,8 +7,18 @@ require "mastermind/oscar"
 # with your gem easier. You can also use a different console, if you like.
 
 # (If you use this, don't forget to add pry to your Gemfile!)
-require "pry"
-Pry.start
+# require "pry"
+# Pry.start
 
 #require "irb"
 #IRB.start
+module Mastermind
+  module Oscar
+    extend self
+    def mastermind
+      GameManager.new.start_game
+    end
+  end
+end
+
+Mastermind::Oscar.mastermind

@@ -22,6 +22,7 @@ class CodemakerTest < Minitest::Test
      end
   #   invalid_input_test
    end
+   allow(@client).to_receive(:get_input).and
 
   def test_init_message
     @client.stub(:code, "") do

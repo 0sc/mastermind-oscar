@@ -16,6 +16,10 @@ module Mastermind
         @stream = stream
       end
 
+      def alert_invalid_input
+        Printer.format_input_query "Hmmm! You entry seems incorrect. Try again."
+      end
+
       def start_game
         puts "Welcome to MASTERMIND"
         status = true
@@ -25,7 +29,7 @@ module Mastermind
 
           input = get_first_char
           if input == 'q'
-            return
+            break
           elsif input == 's'
             show_records
           elsif input == 'i'
@@ -33,28 +37,41 @@ module Mastermind
           elsif input == 'p'
             # play game
             status = game_on? play
+          else 
+            alert_invalid_input
           end
         end
-
+        @user ||= ''
+        puts "Thank you for playing, #{@user}\nCiao!!!"
       end
 
       def play
-        set_difficulty #if @difficulty.nil?
+         return :quit unless set_difficulty 
         @recorder= RecordManager.new(@user)
         @user = @recorder.user unless @user
 
         codemaker = Codemaker.new(difficulty, @recorder)
-        return codemaker.init 
+        return codemaker.start 
       end
 
       def get_first_char
-        return @stream.gets.chomp[0].downcase
+        return (@stream.gets + " ").chomp[0].downcase.strip
       end
 
       def set_difficulty
-        Printer.format_input_query "Choose difficulty:\n(b)eginner\n(i)ntermediate\n(a)dvanced\n(Invalid input will default to beginner)"
+        Printer.format_input_query <<-EOS
+          Choose difficulty:
+          (b)eginner
+          (i)ntermediate
+          (a)dvanced
+          Invalid input will default to beginner
+          You can (q)uit the game at any time
+        EOS
 
         input = get_first_char
+
+        return false if input.eql? 'q'
+
         @difficulty = Mastermind::Oscar.game_level(input)
       end
 
