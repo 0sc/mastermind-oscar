@@ -5,8 +5,7 @@ require "stringio"
 
 class RecordManagerTest < Minitest::Test
   def setup
-    difficulty = :intermediate
-    @client = Mastermind::Oscar::RecordManager.new(:intermediate, StringIO.new("Adebayo\n"))
+    @client = Mastermind::Oscar::RecordManager.new(nil, StringIO.new("Adebayo\n"))
   end
 
   def test_initialize

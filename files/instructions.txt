@@ -1,0 +1,14 @@
+Mastermind is an Awesomely difficult game to play!
+=================================================
+
+##Rules
+
+* To play the game, you will have to register and log in
+* To start a game, you will need to click "Play" from your dashboard
+* Computer will guess four pegs of two distinct colors (0101)
+* You will be presented with a set of select boxes - one box for each peg
+* Each select box will contain two numbers, representing colors (0 and 1)
+* You will guess a combination of pegs you believe to match computer's
+* After clicking "Submit", you will be shown the number of pegs you managed to guess
+* When you guessed all pegs, the game is over and you won
+* After 8 unsuccessful attempts, the game is over and you lost

@@ -1,0 +1,403 @@
+BEGINNER
+========
+Name:	Oscar
+ 1:32pm Sep 28, 2015
+Sequence:   RGBR
+Guess 1:		RGBY
+Guess 2:		BGYR
+Guess 3:		RGGR
+Guess 4:		RGGB
+Guess 5:		BGGR
+Guess 6:		RGBR
+Guessed the sequence in: 2 minutes , 29 secs 
+
+Name:	Hinata uzuamaki
+ 3:00pm Sep 28, 2015
+Sequence:   BRBG
+Guess 1:		BRBG
+Guessed the sequence in: 8 secs
+
+Name:	Uchiha sasuke
+ 3:01pm Sep 28, 2015
+Sequence:   GBRB
+Guess 1:		RGRB
+Guess 2:		BBBR
+Guess 3:		RRBR
+Guess 4:		GBRB
+Guessed the sequence in: 32 secs
+
+Name:	Itachi uchiha
+ 3:02pm Sep 28, 2015
+Sequence:   BYRR
+Guess 1:		BYRR
+Guessed the sequence in: 7 secs
+
+Name:	Shizuni shizuni
+ 3:09pm Sep 28, 2015
+Sequence:   GRGG
+Guess 1:		RRYY
+Guess 2:		RBGY
+Guess 3:		RBGG
+Guess 4:		RYYG
+Guess 5:		RYGB
+Guess 6:		RBGR
+Guess 7:		BRGR
+Guess 8:		GRGR
+Guess 9:		RRGR
+Guess 10:		GBGR
+Guess 11:		RGGR
+Guess 12:		GGGG
+
+Name:	Simba the badass
+ 3:16pm Sep 28, 2015
+Sequence:   GRYG
+Guess 1:		SDSD
+Guess 2:		BBBB
+Guess 3:		RRRR
+Guess 4:		YYYY
+Guess 5:		GGGG
+Guess 6:		GRGG
+Guess 7:		GRGY
+Guess 8:		GRYG
+Guessed the sequence in: 46 secs
+
+Name:	P
+ 3:18pm Sep 28, 2015
+Sequence:   RYGR
+Guess 1:		GGGG
+Guess 2:		YYYY
+Guess 3:		GYGY
+Guess 4:		RYGR
+Guessed the sequence in: 20 secs
+
+Name:	Name mia
+ 3:19pm Sep 28, 2015
+Sequence:   YGBR
+Guess 1:		GGGG
+Guess 2:		GRRR
+Guess 3:		GRYY
+Guess 4:		YRGY
+Guess 5:		BRYG
+Guess 6:		YBRG
+Guess 7:		YGBR
+Guessed the sequence in: 1 minute, 4 secs
+
+Name:	Failed force
+ 3:20pm Sep 28, 2015
+Sequence:   RGGR
+Guess 1:		GGGG
+Guess 2:		BBBB
+Guess 3:		YYYY
+Guess 4:		YBRG
+Guess 5:		BGRR
+Guess 6:		BYYY
+Guess 7:		YYYB
+Guess 8:		RGGG
+Guess 9:		GRGR
+Guess 10:		BYRR
+Guess 11:		YBBY
+Guess 12:		RBBR
+
+Name:	The boss
+ 3:25pm Sep 28, 2015
+Sequence: 	GRBB
+Guess 1:		RGRG
+Guess 2:		GRRG
+Guess 3:		GRRR
+Guess 4:		GGGR
+Guess 5:		GRGG
+Guess 6:		BBBR
+Guess 7:		RBRR
+Guess 8:		RRRB
+Guess 9:		BRGB
+Guess 10:		BRRB
+Guess 11:		BRRR
+Guess 12:		RRRB
+Game over! 41 secs
+
+Name:	Jeff
+ 3:34pm Sep 28, 2015
+Sequence: 	YYBB
+
+Name:	Jeff
+ 3:40pm Sep 28, 2015
+Sequence: 	GBRY
+
+Name:	Jeff
+ 3:40pm Sep 28, 2015
+Sequence: 	GYYG
+
+Name:	Jeff
+ 3:43pm Sep 28, 2015
+Sequence: 	YYYY
+Guess 1:		YYYY
+Guessed the sequence in: 11 secs
+
+Name:	Bingo bingo
+ 3:50pm Sep 28, 2015
+Sequence: 	RYYR
+Guess 1:		RYYY
+Guess 2:		RYYR
+Guessed the sequence in: 12 secs
+
+Name:	Oscas
+ 4:31pm Sep 28, 2015
+Sequence: 		<GGRB>
+Guess 1:		RRRR
+Guess 2:		BYGR
+Guess 3:		GGRB
+Guessed the sequence in: 13 secs
+
+Name:	#<StringIO:0x9884b00>
+ 7:41pm Sep 28, 2015
+Sequence: 		<BBBG>
+
+Name:	Oscar baba
+ 7:43pm Sep 28, 2015
+Sequence: 		<RGRY>
+Guess 1:		BRYG
+Guess 2:		RRYG
+Guess 3:		RGRY
+Guessed the sequence in: 56 secs
+
+Name:	#<StringIO:0x99452b0>
+ 9:08pm Sep 28, 2015
+Sequence: 		<RBRY>
+
+Name:	#<StringIO:0xabda830>
+ 9:11pm Sep 28, 2015
+Sequence: 		<GGGY>
+
+Name:	#<StringIO:0x9fd0b5c>
+ 9:13pm Sep 28, 2015
+Sequence: 		<BBYG>
+
+Name:	#<StringIO:0xa7a5cc4>
+ 9:13pm Sep 28, 2015
+Sequence: 		<RGBG>
+
+Name:	#<StringIO:0xa0f7440>
+ 9:15pm Sep 28, 2015
+Sequence: 		<GRBB>
+
+Name:	#<StringIO:0x8f88ce0>
+ 9:15pm Sep 28, 2015
+Sequence: 		<GRYG>
+
+Name:	#<StringIO:0xa017804>
+ 9:22pm Sep 28, 2015
+Sequence: 		<RYGR>
+
+Name:	#<StringIO:0x97ba8a0>
+ 9:22pm Sep 28, 2015
+Sequence: 		<YYGG>
+
+Name:	#<StringIO:0xa0823e8>
+ 9:25pm Sep 28, 2015
+Sequence: 		<BYYR>
+
+Name:	#<StringIO:0xa5dbf38>
+ 9:26pm Sep 28, 2015
+Sequence: 		<BBGY>
+
+Name:	#<StringIO:0xa7f4a7c>
+ 9:27pm Sep 28, 2015
+Sequence: 		<GRGR>
+
+Name:	#<StringIO:0x8be3194>
+ 9:28pm Sep 28, 2015
+Sequence: 		<GGRG>
+
+Name:	#<StringIO:0x98e5f54>
+ 9:32pm Sep 28, 2015
+Sequence: 		<GRBY>
+
+Name:	#<StringIO:0x8b73358>
+ 9:32pm Sep 28, 2015
+Sequence: 		<YGRG>
+
+Name:	#<StringIO:0x8e16808>
+ 9:36pm Sep 28, 2015
+Sequence: 		<BBGB>
+
+Name:	#<StringIO:0x96f4d80>
+ 9:38pm Sep 28, 2015
+Sequence: 		<YGRB>
+
+Name:	#<StringIO:0x8b48568>
+ 9:39pm Sep 28, 2015
+Sequence: 		<RGRR>
+
+Name:	#<StringIO:0x962af58>
+ 9:39pm Sep 28, 2015
+Sequence: 		<YRBB>
+
+Name:	#<StringIO:0x899f554>
+ 9:40pm Sep 28, 2015
+Sequence: 		<GRBG>
+
+Name:	#<StringIO:0x8a8ffcc>
+ 9:48pm Sep 28, 2015
+Sequence: 		<BGRR>
+
+Name:	#<StringIO:0xa485b84>
+ 9:49pm Sep 28, 2015
+Sequence: 		<RRBY>
+
+Name:	#<StringIO:0xa15a5cc>
+ 9:58pm Sep 28, 2015
+Sequence: 		<GBRB>
+
+Name:	#<StringIO:0x8e1fbec>
+10:08pm Sep 28, 2015
+Sequence: 		<YYYR>
+
+Name:	#<StringIO:0xa0db448>
+10:14pm Sep 28, 2015
+Sequence: 		<BBGG>
+
+Name:	#<StringIO:0xa028dc0>
+10:16pm Sep 28, 2015
+Sequence: 		<YYGB>
+
+Name:	#<StringIO:0xa596f00>
+10:17pm Sep 28, 2015
+Sequence: 		<YGRR>
+
+Name:	#<StringIO:0xa04f268>
+10:22pm Sep 28, 2015
+Sequence: 		<RYBY>
+
+Name:	#<StringIO:0x99f3298>
+10:22pm Sep 28, 2015
+Sequence: 		<BYBG>
+
+Name:	#<StringIO:0x8a34050>
+11:15pm Sep 28, 2015
+Sequence: 		<GRBB>
+
+Name:	#<StringIO:0x982bd5c>
+11:22pm Sep 28, 2015
+Sequence: 		<GYRG>
+
+Name:	#<StringIO:0x92c19e8>
+11:25pm Sep 28, 2015
+Sequence: 		<GBGY>
+
+Name:	#<StringIO:0x8ac1bd0>
+11:26pm Sep 28, 2015
+Sequence: 		<BYYY>
+
+Name:	#<StringIO:0xa1e03fc>
+11:33pm Sep 28, 2015
+Sequence: 		<BRYR>
+
+Name:	#<StringIO:0xa574f40>
+11:37pm Sep 28, 2015
+
+Name:	#<StringIO:0x8c1fbf8>
+11:39pm Sep 28, 2015
+
+Name:	#<StringIO:0x9e479e8>
+11:39pm Sep 28, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x89b573c>
+12:21am Sep 29, 2015
+Sequence: 		<GBYB>
+
+Name:	#<StringIO:0x9f1b248>
+12:23am Sep 29, 2015
+Sequence: 		<RYRR>
+
+Name:	#<StringIO:0x98aa2c4>
+12:26am Sep 29, 2015
+Sequence: 		<RGYR>
+
+Name:	#<StringIO:0x8ba1898>
+12:27am Sep 29, 2015
+Sequence: 		<RBYY>
+
+Name:	#<StringIO:0xa127e60>
+12:28am Sep 29, 2015
+Sequence: 		<BRBB>
+
+Name:	#<StringIO:0x8a33a4c>
+12:28am Sep 29, 2015
+Sequence: 		<GBGG>
+
+Name:	#<StringIO:0x9de5b6c>
+12:29am Sep 29, 2015
+Sequence: 		<BYGY>
+
+Name:	#<StringIO:0xa611340>
+12:29am Sep 29, 2015
+Sequence: 		<BBRG>
+
+Name:	#<StringIO:0x93e2854>
+12:30am Sep 29, 2015
+Sequence: 		<GGRG>
+
+Name:	#<StringIO:0x97db58c>
+12:31am Sep 29, 2015
+Sequence: 		<GBRB>
+
+Name:	#<StringIO:0x89ab0fc>
+12:32am Sep 29, 2015
+Sequence: 		<YBGY>
+
+Name:	#<StringIO:0x9518c14>
+12:33am Sep 29, 2015
+Sequence: 		<RBRG>
+
+Name:	#<StringIO:0xa6b2a9c>
+12:33am Sep 29, 2015
+Sequence: 		<GRGG>
+
+Name:	#<StringIO:0x9fbfa00>
+12:34am Sep 29, 2015
+Sequence: 		<BGGB>
+
+Name:	#<StringIO:0x9d7e278>
+12:36am Sep 29, 2015
+Sequence: 		<RYYB>
+
+Name:	#<StringIO:0x9a70bd0>
+12:38am Sep 29, 2015
+Sequence: 		<RRGY>
+
+Name:	#<StringIO:0x8ba8724>
+12:40am Sep 29, 2015
+Sequence: 		<BRYB>
+
+Name:	#<StringIO:0x8a6d738>
+12:41am Sep 29, 2015
+Sequence: 		<RBYR>
+
+Name:	#<StringIO:0x8d58290>
+12:41am Sep 29, 2015
+Sequence: 		<YBYB>
+
+Name:	#<StringIO:0x8b4bf88>
+12:41am Sep 29, 2015
+Sequence: 		<YBRY>
+
+Name:	#<StringIO:0x949b674>
+12:42am Sep 29, 2015
+Sequence: 		<RBGG>
+
+Name:	#<StringIO:0xa042d9c>
+12:42am Sep 29, 2015
+Sequence: 		<BYYG>
+
+Name:	#<StringIO:0x9a3e590>
+12:54am Sep 29, 2015
+Sequence: 		<BYGG>
+
+Name:	Oscar again
+ 9:20am Sep 29, 2015
+Sequence: 		<YGBY>
+Guess 1:		RGBY
+Guess 2:		RGBR
+Guess 3:		YGBY
+Guessed the sequence in: 34 secs
