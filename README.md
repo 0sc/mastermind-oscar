@@ -23,6 +23,7 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+[![Coverage Status](https://coveralls.io/repos/andela-ooranagwa/mastermind-oscar/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ooranagwa/mastermind-oscar?branch=master)
 
 ## Development
 
