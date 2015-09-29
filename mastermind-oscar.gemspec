@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest-reporters"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "colorize"
+  spec.add_runtime_dependency 'coveralls', require: false
 end

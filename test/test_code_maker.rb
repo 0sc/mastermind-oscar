@@ -1,5 +1,6 @@
+require 'test_helper'
 require 'minitest/autorun'
-# require 'minitest/reporters'
+require 'minitest/reporters'
 require "mastermind/oscar/codemaker"
 require "mastermind/oscar/time_manager"
 require "stringio"

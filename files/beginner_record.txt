@@ -1,16 +1,5 @@
 BEGINNER
 ========
-Name:	Oscar
- 1:32pm Sep 28, 2015
-Sequence:   RGBR
-Guess 1:		RGBY
-Guess 2:		BGYR
-Guess 3:		RGGR
-Guess 4:		RGGB
-Guess 5:		BGGR
-Guess 6:		RGBR
-Guessed the sequence in: 2 minutes , 29 secs 
-
 Name:	Hinata uzuamaki
  3:00pm Sep 28, 2015
 Sequence:   BRBG
