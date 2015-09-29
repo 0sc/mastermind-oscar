@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Implements the popular classic game: MASTERMIND}
   #spec.description   = %q{TODO: Write a longer description or delete this line.}
-  #spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/andela-ooranagwa/mastermind-oscar.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.9"
+  spec.add_development_dependency "minitest-reporters"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "colorize"
 end
