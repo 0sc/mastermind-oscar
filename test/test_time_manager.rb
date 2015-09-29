@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/reporters'
 require "mastermind/oscar/time_manager"
-require "time"
 
 class TimeManagerTest < Minitest::Test
   def setup
@@ -30,7 +29,7 @@ class TimeManagerTest < Minitest::Test
 
   def test_to_string
     input = [[1, 'hour'],[5, 'minute'],[0, 'second'],[1, 'second'],[6, 'hour']]
-    expect = ['1 hour ', '5 minutes ', nil, '1 second ', '6 hours ']
+    expect = ['1 hour', '5 minutes', nil, '1 second', '6 hours']
 
     input.each_index do |i|
       time = input[i][0]

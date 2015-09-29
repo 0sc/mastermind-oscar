@@ -1,14 +1,14 @@
 require 'minitest/autorun'
-require 'minitest/reporters'
+# require 'minitest/reporters'
 require "mastermind/oscar/printer"
 require "stringio"
 
 class PrinterTest < Minitest::Test
   attr_reader :colors
   def setup
-    @client = Mastermind::Oscar::Printer.new
+    @client = Mastermind::Oscar::Printer
     @client.set_output_stream(StringIO.new)
-    @text = "rgbyrcgm"
+    @text = "RGBYRCGM"
   end
 
   def colors
@@ -59,5 +59,10 @@ class PrinterTest < Minitest::Test
     assert_equal(output.join, @client.colour_letters(@text))
   end
 
+  def test_format_input
+    text = "Mastermind"
+    @client.format_input_query(text)
+    assert_equal("\n#{text}\n>\t", @client.stream.string)
+  end
 
 end
