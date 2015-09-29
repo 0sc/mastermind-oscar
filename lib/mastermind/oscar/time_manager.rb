@@ -11,7 +11,7 @@ module Mastermind
       end
 
       def get_time
-        secs = get_seconds.to_i + 18290
+        secs = get_seconds.to_i
         days, secs = evaluate(secs, 86400)
         hour, secs = evaluate(secs, 3600)
         min, secs  = evaluate(secs, 60)
@@ -38,7 +38,7 @@ module Mastermind
         return if time == 0
 
         time > 1 ? s = 's' : s = ''
-        "#{time} #{unit}#{s} "
+        "#{time} #{unit}#{s}"
       end
     end
   end

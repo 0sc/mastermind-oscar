@@ -5,8 +5,7 @@ module Mastermind
   module Oscar
     extend self
     def mastermind
-      puts "Called"
-      Mastermind::Oscar::GameManager.new.start_game
+      GameManager.new.start_game
     end
   end
 end

@@ -4,15 +4,16 @@ module Mastermind
   module Oscar
     class Codemaker
       attr_reader :code, :timer
-      def initialize(difficulty, printer, recorder)
+      def initialize(difficulty, recorder)
         @difficulty = difficulty
-        @printer    = printer
         @recorder   = recorder
       end
  
       def init
         generate_code
-        @timer = Mastermind::Oscar::TimeManager.new
+        @timer = TimeManager.new
+        @recorder.open_save_file(@difficulty)
+        @recorder.print_to_file("Sequence: \t\t<#{code.join}>")
         @timer.start_timer
         init_message
 
@@ -24,7 +25,7 @@ module Mastermind
         @guess     = 0
 
         while !out_of_guess? max_guess 
-          input = gets.chomp.downcase
+          input = gets.chomp.upcase
 
           if quit?(input)
             return :quit
@@ -35,7 +36,7 @@ module Mastermind
             status = analyze_input(input)
             return congratulations if status
           end
-          @printer.output("You've taken #{@guess} out of #{max_guess} guesses.\n")
+          Printer.output("You've taken #{@guess} out of #{max_guess} guesses.\n")
           guess_again
         end
 
@@ -44,6 +45,8 @@ module Mastermind
       end
 
       def analyze_input(input)
+        @recorder.print_to_file("Guess #{@guess}:\t\t#{input}")
+
         input = input.split("")
         return true if input == code
 
@@ -81,9 +84,9 @@ module Mastermind
       end
 
       def give_guess_feedback(input, exact, partial)
-        feedback = "Your guess, " + @printer.colour_letters(input) + ", has #{exact + partial} of the correct elements with #{exact} in the correct positions."
+        feedback = "Your guess, " + Printer.colour_letters(input) + ", has #{exact + partial} of the correct elements with #{exact} in the correct positions."
 
-        @printer.output(feedback)
+        Printer.output(feedback)
       end
 
       def out_of_guess?(max_guess)
@@ -91,15 +94,15 @@ module Mastermind
       end
 
       def quit?(input)
-        input[0] == 'q'
+        input[0].upcase == 'Q'
       end
 
       def cheat?(input)
-        input[0] == 'c'
+        input[0].upcase == 'C'
       end
 
       def cheat
-        @printer.output(color_code)
+        Printer.output(color_code)
       end
 
       def generate_code
@@ -125,24 +128,24 @@ module Mastermind
       end
 
       def colors
-        @printer.colors.keys
+        Printer.colors.keys
       end
 
       def init_message
         a = (@difficulty == :beginner) ? 'a' : 'an'
-        @printer.output("I have generated #{a} #{@difficulty} sequence with #{code.size} elements made up of:")
-        @printer.output(create_color_string + ". Use (q)uit at any time to end the game.")
-        @printer.format_input_query("what's your guess?")
+        Printer.output("I have generated #{a} #{@difficulty} sequence with #{code.size} elements made up of:")
+        Printer.output(create_color_string + ". Use (q)uit at any time to end the game.")
+        Printer.format_input_query("what's your guess?")
       end
 
       def create_color_string
         count = 0
         string = []
-        @printer.colors.each do |key, colo|
+        Printer.colors.each do |key, colo|
           break if count == @possible_colours
           text = colo.to_s
           text.gsub!(text[0],"(#{text[0]})")
-          string << @printer.colour_text(text, colo)
+          string << Printer.colour_text(text, colo)
           count += 1
         end
         string[0...-1].join(", ") + ", and " + string.last
@@ -160,22 +163,29 @@ module Mastermind
 
       def congratulations
         @timer.stop_timer
-        @printer.output("Congratulations! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{@timer.get_time}")
+        play_time = @timer.get_time
+        Printer.output("Congratulations! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{play_time}")
+        @recorder.print_to_file("Guessed the sequence in: #{play_time}")
+        @recorder.close
+        
         :won
       end
 
       def game_over
-        @printer.output("Game over! You've used up all your guesses. The sequence is '#{color_code}'.")
+        @timer.stop_timer
+        Printer.output("Game over! You've used up all your guesses. The sequence is '#{color_code}'.")
+        @recorder.print_to_file("Game over! #{@timer.get_time}")
+        @recorder.close
 
         :end
       end
 
       def color_code
-        @printer.colour_letters(@code.join)
+        Printer.colour_letters(@code.join)
       end
 
       def guess_again
-        @printer.format_input_query "Guess again"
+        Printer.format_input_query "Guess again"
       end
 
     end

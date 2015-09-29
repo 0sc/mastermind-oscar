@@ -3,51 +3,70 @@ require "colorize"
 module Mastermind
   module Oscar
     class Printer
-      attr_reader :stream
-      def initialize
+      @@stream = STDOUT
+      def self.initialize
         set_output_stream
       end
 
-      def output (content)
-        @stream.puts content
+      def self.output (content)
+        @@stream.puts content
       end
 
-      def colors
+      def self.stream
+        @@stream
+      end
+
+      def self.colors
         {
-          "r" => :red,
-          "g" => :green,
-          "b" => :blue,
-          "y" => :yellow,
-          "c" => :cyan,
-          "m" => :magenta
+          "R" => :red,
+          "G" => :green,
+          "B" => :blue,
+          "Y" => :yellow,
+          "C" => :cyan,
+          "M" => :magenta
         }
       end
 
-      def colour_letters(word)
+      def self.colour_letters(word)
         word = word.split("") unless word.is_a?(Array)
 
         word = word.map!{ |letter| colour_text(letter,colors[letter]) }
         word.join
       end
 
-      def colour_text (content, colour)
+      def self.colour_text (content, colour)
         content.colorize(:color => colour)
       end
 
-      def colour_background (content, colour)
+      def self.colour_background (content, colour)
         content.colorize(:background => colour)
       end
 
-      def colour_background_text (content, colour, b_colour)
+      def self.colour_background_text (content, colour, b_colour)
         content.colorize(:background => b_colour).colorize(:color => colour)
       end
 
-      def set_output_stream (stream = STDOUT)
-        @stream = stream 
+      def self.set_output_stream (stream = STDOUT)
+        @@stream = stream 
       end
 
-      def format_input_query(text)
-        print "\n#{text}\n>\t"
+      def self.format_input_query(text)
+        @@stream.print "\n#{text}\n>\t"
+      end
+
+      def self.output_file(file)
+        file.each do |f|
+          f.each_line do |line|
+            fColor = line.split("\t\t") 
+            if fColor.size == 2
+              fColor[-1] = colour_letters(fColor.last);
+              line = fColor.join("\t\t")
+            end
+            print line
+          end
+          f.close
+          puts "\n\n"
+        end        
       end
     end
   end
