@@ -4,3 +4,13 @@ Name:	Bingo
  8:29pm Sep 29, 2015
 Sequence: 		<BGCRRGMM>
 Guess 1:		RYGNGSDE
+
+Name:	Second save
+ 3:28am Sep 30, 2015
+Sequence: 		<GMYBYBRM>
+Guess 1:		CDDDDDDD
+Guess 2:		DDDDDDDD
+Guess 3:		SDFSDFDS
+Guess 4:		SDDSDDDD
+Guess 5:		GMYBYBRM
+Guessed the sequence in: 34 secs

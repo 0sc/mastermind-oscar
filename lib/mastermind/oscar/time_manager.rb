@@ -10,8 +10,8 @@ module Mastermind
         @stop = Time.now
       end
 
-      def get_time
-        secs = get_seconds.to_i
+      def get_time(secs = get_seconds)
+        secs = secs.to_i
         days, secs = evaluate(secs, 86400)
         hour, secs = evaluate(secs, 3600)
         min, secs  = evaluate(secs, 60)

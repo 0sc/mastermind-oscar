@@ -1,6 +1,4 @@
 require 'test_helper'
-require 'minitest/autorun'
-require 'minitest/reporters'
 require "mastermind/oscar/codemaker"
 require "mastermind/oscar/time_manager"
 require "stringio"
@@ -22,10 +20,11 @@ class CodemakerTest < Minitest::Test
      end
   #   invalid_input_test
    end
-   allow(@client).to_receive(:get_input).and
+   #allow(@client).to_receive(:get_input).and
 
   def test_init_message
     @client.stub(:code, "") do
+      @client.stub(:)
       @client.init_message
     end
   end

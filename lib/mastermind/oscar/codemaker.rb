@@ -25,13 +25,14 @@ module Mastermind
         @guess     = 0
 
         while !out_of_guess? max_guess 
-          input = gets.chomp.upcase.strip
+          input = gets.chomp
+          input = input.nil? ? " " : input.upcase.strip
 
           if quit?(input)
             return :quit
           elsif cheat?(input)
              cheat
-             return
+             #return
           elsif is_valid_input?(input)
             @guess += 1
             status = analyze_input(input)
@@ -95,11 +96,11 @@ module Mastermind
       end
 
       def quit?(input)
-        input[0].upcase == 'Q'
+        input[0].upcase == 'Q' if !input.empty?
       end
 
       def cheat?(input)
-        input[0].upcase == 'C' && input.length == 1
+        input[0].upcase == 'C' && input.length == 1 if !input.empty?
       end
 
       def cheat
@@ -165,11 +166,20 @@ module Mastermind
       def congratulations
         @timer.stop_timer
         play_time = @timer.get_time
-        Printer.output("Congratulations #{@recorder.user}!!! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{play_time}")
-        @recorder.print_to_file("Guessed the sequence in: #{play_time}")
-        @recorder.close
-        
+        congratulation_msg(play_time)
+        save_game(play_time)
+
         :won
+      end
+
+      def congratulation_msg(play_time)
+        Printer.output("Congratulations #{@recorder.user}!!! You guessed the sequence '#{color_code}' in #{@guess} guesses over #{play_time}")
+      end
+
+      def save_game(play_time)
+        @recorder.print_to_file("Guessed the sequence in: #{play_time}")
+        @recorder.check_for_top_ten(code.join, @guess, @timer.get_seconds, @difficulty.to_s)
+        @recorder.close
       end
 
       def game_over

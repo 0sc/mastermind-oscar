@@ -1,6 +1,7 @@
 require_relative "printer"
 require_relative "codemaker"
 require_relative "record_manager"
+require_relative "time_manager"
 
 module Mastermind
 	module Oscar
@@ -25,15 +26,17 @@ module Mastermind
         status = true
 
         while status
-          Printer.format_input_query "Would you like to (p)lay, read the (i)nstructions, view (s)cores or (q)uit?"
+          Printer.format_input_query "Would you like to (p)lay, read the (i)nstructions, view (t)op scores, view scores (r)ecords or (q)uit?"
 
           input = get_first_char
           if input == 'q'
             break
-          elsif input == 's'
-            show_records
+          elsif input == 't'
+            show_top_10
           elsif input == 'i'
             show_instructions
+          elsif input == "r"
+            show_records
           elsif input == 'p'
             # play game
             status = game_on? play
@@ -78,7 +81,7 @@ module Mastermind
       def game_on? (arg)
         return false if arg == :quit
 
-        #show_top_10 if arg == :won
+        show_top_10(@difficulty) if arg == :won
         return true
       end
 
@@ -88,6 +91,18 @@ module Mastermind
 
       def show_instructions
         Printer.output(RecordManager.get_instructions)
+      end
+
+      def show_top_10 (level = nil)
+        list = level.nil? ? Mastermind::Oscar.game_level.values : [level]
+        
+        t_obj = TimeManager.new
+
+        list.each do |lvl|
+          lvl = lvl.to_s
+          rec = RecordManager.get_top_ten(lvl)
+          Printer.output_top_ten(lvl,rec,t_obj)
+        end
       end
 
 		end

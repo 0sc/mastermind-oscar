@@ -423,3 +423,278 @@ Sequence: 		<YRRG>
 Name:	Oscar
  8:17pm Sep 29, 2015
 Sequence: 		<YRYG>
+
+Name:	Disable
+10:38pm Sep 29, 2015
+Sequence: 		<RYGG>
+
+Name:	Mastermind
+11:00pm Sep 29, 2015
+Sequence: 		<RRBR>
+Guess 1:		RRRR
+Guess 2:		RRRG
+Guess 3:		BRRR
+Guess 4:		RBRR
+Guess 5:		RRBR
+Guessed the sequence in: 53 secs
+
+Name:	Chima chidi
+12:51am Sep 30, 2015
+Sequence: 		<GRYY>
+Guess 1:		GGGG
+Guess 2:		BGRR
+Guess 3:		GRRY
+Guess 4:		GRYY
+Guessed the sequence in: 1 minute, 3 secs
+
+Name:	Masterewasfd
+ 1:06am Sep 30, 2015
+Sequence: 		<RRRB>
+Guess 1:		GGRR
+Guess 2:		GBBB
+Guess 3:		GYYY
+Guess 4:		GGRR
+Guess 5:		GRBG
+Guess 6:		GRGG
+Guess 7:		GBBG
+Guess 8:		GGGG
+Guess 9:		BRRB
+Guess 10:		RRRB
+Guessed the sequence in: 3 minutes, 16 secs
+
+Name:	Osdas
+ 1:16am Sep 30, 2015
+Sequence: 		<RGYR>
+Guess 1:		BBBB
+Guess 2:		YYYY
+Guess 3:		YRYR
+Guess 4:		YRRY
+Guess 5:		GGRY
+Guess 6:		GGYR
+Guess 7:		RGYR
+Guessed the sequence in: 1 minute, 29 secs
+
+Name:	Osafds
+ 1:19am Sep 30, 2015
+Sequence: 		<YYBR>
+Guess 1:		RRRR
+Guess 2:		RGBY
+Guess 3:		YGRB
+Guess 4:		BGYR
+Guess 5:		BGRY
+Guess 6:		YBYG
+Guess 7:		YGYG
+Guess 8:		YGGG
+
+Name:	Osdfffff
+ 1:23am Sep 30, 2015
+Sequence: 		<GYBB>
+Guess 1:		GGGG
+Guess 2:		RGBY
+Guess 3:		RRGB
+Guess 4:		RRBG
+Guess 5:		GRRB
+Guess 6:		GRBR
+Guess 7:		GRYY
+
+Name:	Osdfffff
+ 1:26am Sep 30, 2015
+Sequence: 		<RBYB>
+Guess 1:		RRRR
+Guess 2:		RRRR
+
+Name:	Osdfffff
+ 1:21am Sep 30, 2015
+Sequence: 		<RGRG>
+Guess 1:		RRRR
+Guess 2:		RGGR
+Guess 3:		GRRG
+Guess 4:		GRGR
+Guess 5:		RRGG
+Guess 6:		GGRR
+Guess 7:		GGGR
+
+Name:	Sdfsfsa
+ 1:26am Sep 30, 2015
+Sequence: 		<YBRY>
+Guess 1:		YBRY
+Guessed the sequence in: 5 secs
+
+Name:	Asdf
+ 1:28am Sep 30, 2015
+Sequence: 		<RBGG>
+Guess 1:		RBGG
+Guessed the sequence in: 42 secs
+
+Name:	Osdfasfd
+ 1:35am Sep 30, 2015
+Sequence: 		<GRYG>
+Guess 1:		GRYG
+Guessed the sequence in: 9 secs
+
+Name:	Gggggg
+ 1:38am Sep 30, 2015
+Sequence: 		<BYRB>
+Guess 1:		BYRB
+Guessed the sequence in: 18 secs
+
+Name:	Jhuyh
+ 1:40am Sep 30, 2015
+Sequence: 		<YRRG>
+Guess 1:		YRRG
+Guessed the sequence in: 6 secs
+
+Name:	Ad
+ 1:42am Sep 30, 2015
+Sequence: 		<RBYY>
+Guess 1:		RBYY
+Guessed the sequence in: 37 secs
+
+Name:	Osds
+ 1:46am Sep 30, 2015
+Sequence: 		<RBGY>
+
+Name:	
+ 3:15am Sep 30, 2015
+Sequence: 		<BGYR>
+Guess 1:		BGYR
+Guessed the sequence in: 13 secs
+
+Name:	Ssfd
+ 3:17am Sep 30, 2015
+Sequence: 		<BBGY>
+Guess 1:		BBGY
+Guessed the sequence in: 3 secs
+
+Name:	
+ 3:18am Sep 30, 2015
+Sequence: 		<RGYG>
+Guess 1:		RGYG
+Guessed the sequence in: 8 secs
+
+Name:	Osdc
+ 3:20am Sep 30, 2015
+Sequence: 		<BGYG>
+Guess 1:		BGYG
+Guessed the sequence in: 4 secs
+
+Name:	A
+ 3:21am Sep 30, 2015
+Sequence: 		<YRYG>
+Guess 1:		YRYG
+Guessed the sequence in: 4 secs
+
+Name:	First save
+ 3:22am Sep 30, 2015
+Sequence: 		<RBRB>
+Guess 1:		RBBR
+Guess 2:		BBBB
+Guess 3:		RBBR
+Guess 4:		RBRB
+Guessed the sequence in: 18 secs
+
+Name:	First save
+ 3:23am Sep 30, 2015
+Sequence: 		<GRYG>
+Guess 1:		GYRY
+Guess 2:		GGGG
+Guess 3:		GRYG
+Guessed the sequence in: 21 secs
+
+Name:	Second save
+ 3:25am Sep 30, 2015
+Sequence: 		<GBYG>
+Guess 1:		GGGG
+Guess 2:		YBRC
+Guess 3:		GBYG
+Guessed the sequence in: 24 secs
+
+Name:	Second save
+ 3:26am Sep 30, 2015
+Sequence: 		<YBGR>
+Guess 1:		GRYB
+Guess 2:		YGRD
+Guess 3:		RBGR
+Guess 4:		YBGR
+Guessed the sequence in: 27 secs
+
+Name:	Second save
+ 3:27am Sep 30, 2015
+Sequence: 		<RGYY>
+Guess 1:		GGGG
+Guess 2:		BRGY
+Guess 3:		RGYY
+Guessed the sequence in: 12 secs
+
+Name:	Oscar romero
+ 4:11am Sep 30, 2015
+Sequence: 		<BYGY>
+Guess 1:		RGBG
+Guess 2:		YRBG
+Guess 3:		GBRY
+Guess 4:		RBGY
+Guess 5:		BYGY
+Guessed the sequence in: 1 minute, 16 secs
+
+Name:	Full test
+ 4:21am Sep 30, 2015
+Sequence: 		<RYRG>
+Guess 1:		GGGG
+Guess 2:		GBBR
+Guess 3:		RGBB
+Guess 4:		RGYY
+Guess 5:		RYGB
+Guess 6:		RYBG
+Guess 7:		RYBY
+Guess 8:		RRBG
+Guess 9:		YRBG
+Guess 10:		RGBG
+Guess 11:		RYBG
+
+Name:	Lkl
+ 4:24am Sep 30, 2015
+Sequence: 		<RGRG>
+
+Name:	Sds
+ 4:25am Sep 30, 2015
+Sequence: 		<GYGB>
+
+Name:	Sdasss
+ 4:28am Sep 30, 2015
+Sequence: 		<RBBG>
+
+Name:	Sfddddddddd
+ 4:31am Sep 30, 2015
+Sequence: 		<GYYY>
+
+Name:	Hjhjj
+ 4:34am Sep 30, 2015
+Sequence: 		<GBYB>
+
+Name:	Jkkj
+ 4:38am Sep 30, 2015
+Sequence: 		<RRRR>
+
+Name:	Oscar
+ 6:58am Sep 30, 2015
+Sequence: 		<RRGB>
+
+Name:	Oscar
+ 6:58am Sep 30, 2015
+Sequence: 		<BGGY>
+
+Name:	Osdsa
+ 7:00am Sep 30, 2015
+Sequence: 		<RYGG>
+
+Name:	Sdfs
+ 7:01am Sep 30, 2015
+Sequence: 		<BGBY>
+
+Name:	Adsssssssssssssss
+ 7:02am Sep 30, 2015
+Sequence: 		<YGBB>
+
+Name:	Dfdgd
+ 7:03am Sep 30, 2015
+Sequence: 		<YGGY>

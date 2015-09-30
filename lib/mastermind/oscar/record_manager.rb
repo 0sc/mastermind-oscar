@@ -1,3 +1,4 @@
+require "yaml"
 module Mastermind
 	module Oscar
 		class RecordManager
@@ -41,6 +42,60 @@ module Mastermind
         @input_file.close if @input_file
       end
 
+      def check_for_top_ten(code, guess, time, difficulty)
+        top_ten = self.class.get_top_ten(difficulty)
+        position = is_hero?(top_ten, guess, time)
+
+        position = top_ten.size if(!position && top_ten.size < 10)
+
+        if position
+          top_ten = insert_in_top_ten(prep_hash(code, guess, time), position, top_ten)
+ 
+          save_top_ten(top_ten, difficulty)
+          return position
+        end
+      end
+
+      def save_top_ten(array,difficulty)
+        file = self.class.get_heros_file(difficulty)
+        serial = YAML::dump(array)
+        File.open(file, "w+") {|f| f.puts serial}
+      end
+
+      def self.get_heros_file(difficulty)
+        "files/top_ten_#{difficulty}.yaml"
+      end
+
+      def insert_in_top_ten(hero, position, array)
+        new_arr = []
+        i = 0
+        shift = false
+        limit  = array.size
+        limit = (limit >= 10) ? limit : limit + 1
+        
+        limit.times do
+          if i == position
+            new_arr << hero
+            shift = true
+          else
+            index = shift ? i - 1 : i
+            new_arr << array[index]
+          end
+          i += 1
+        end
+
+        new_arr
+      end
+
+      def prep_hash(code, guess, time)
+        {
+          name: @user,
+          code: code,
+          guess: guess,
+          time: time
+        }
+      end
+
       def self.get_records
         #levels = []
         #if difficulty
@@ -64,6 +119,30 @@ module Mastermind
           text += line
         end
         text
+      end
+
+      def self.get_top_ten (difficulty)
+        file = get_heros_file(difficulty)
+        content = []
+        File.open(file, "r+") do |val| 
+          content = YAML::load(val)
+        end
+        content = [] if !content
+        content
+      end
+
+      def is_hero?(heros, guess, time)
+        return unless heros.is_a?(Array)
+        guess = guess.to_i
+        heros.each_with_index do |hero, index|
+          hero[:guess] = hero[:guess].to_i
+          if hero[:guess].to_i > guess
+            return index
+          elsif hero[:guess] == guess
+            return index if hero[:time] >time            
+          end
+        end
+        nil
       end
 
 		end

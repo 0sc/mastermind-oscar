@@ -1,6 +1,4 @@
 require 'test_helper'
-require 'minitest/autorun'
-require 'minitest/reporters'
 require "mastermind/oscar/time_manager"
 
 class TimeManagerTest < Minitest::Test

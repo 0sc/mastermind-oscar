@@ -68,6 +68,21 @@ module Mastermind
           puts "\n\n"
         end        
       end
+
+      def self.output_top_ten(level, array,time_obj)puts level.upcase
+        count = 1
+        array.each do |entry|
+          name = entry[:name]
+          code = colour_letters(entry[:code])
+          guess = entry[:guess]
+          time = time_obj.get_time(entry[:time])
+          output(top_score_display_text(name,code,guess,time))
+        end
+      end
+
+      def self.top_score_display_text(name,code,guess,time)
+        "#{name} solved '#{code}' in #{guess} guesses over #{time}"
+      end
     end
   end
 end
