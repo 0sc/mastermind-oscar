@@ -6,7 +6,7 @@ require_relative "time_manager"
 module Mastermind
 	module Oscar
 		class GameManager
-      attr_reader :difficulty
+      attr_reader :difficulty, :user
 
       def initialize 
         set_read_stream 
@@ -21,7 +21,7 @@ module Mastermind
         Printer.format_input_query "Hmmm! You entry seems incorrect. Try again."
       end
 
-      def start_game
+      def start_game(stub_for_test=false)
         puts "Welcome to MASTERMIND"
         status = true
 
@@ -33,28 +33,32 @@ module Mastermind
             break
           elsif input == 't'
             show_top_10
+            status = !stub_for_test
           elsif input == 'i'
             show_instructions
+            status = !stub_for_test
           elsif input == "r"
             show_records
+            status = !stub_for_test
           elsif input == 'p'
             # play game
             status = game_on? play
           else 
             alert_invalid_input
+            status = !stub_for_test
           end
         end
         @user ||= ''
         puts "Thank you for playing, #{@user}\nCiao!!!"
       end
 
-      def play
-         return :quit unless set_difficulty 
-        @recorder= RecordManager.new(@user)
-        @user = @recorder.user unless @user
+      def play(allowed = true)
+        return :quit unless set_difficulty 
+        @recorder= RecordManager.new(user)
+        @user = @recorder.user unless user
 
         codemaker = Codemaker.new(difficulty, @recorder)
-        return codemaker.start 
+        return codemaker.start if allowed
       end
 
       def get_first_char
@@ -103,13 +107,14 @@ module Mastermind
           rec = RecordManager.get_top_ten(lvl)
           Printer.output_top_ten(lvl,rec,t_obj)
         end
+
       end
 
 		end
 
     def self.game_level(input = nil)
       levels = Hash.new(:beginner)
-      levels['a'] = :advanced
+      levels['a'] = :expert
       levels['i'] = :intermediate
       levels['b'] = :beginner
 

@@ -14,13 +14,31 @@ class PrinterTest < Minitest::Test
     [:red, :green, :blue, :yellow, :cyan, :magenta]
   end
 
+  def test_object
+    assert_instance_of Class, @client
+  end
+
+  def test_methods
+    mtds = :stream, :colors, :colour_letters, :colour_text, :colour_background, :colour_background_text, :set_output_stream, :format_input_query, :output_file, :output_top_ten, :top_score_display_text
+
+    mtds.each do |mtd|
+      assert_respond_to @client, mtd
+    end
+  end
+
   def get_output(input)
     @client.output(input)
     @client.stream.string.chomp
   end
 
+  def test_stream
+    refute_nil @client.stream
+  end
+
   def test_output
   	assert_equal(@text, get_output(@text))
+
+    assert_nil @client.output("hello")
   end
 
   def test_colour_text
@@ -53,15 +71,52 @@ class PrinterTest < Minitest::Test
     end
   end
 
-  def test_color_letters
+  def test_colour_letters
     output = @text.split("").map {|x| @client.colour_text(x,@client.colors[x])}
     assert_equal(output.join, @client.colour_letters(@text))
   end
 
-  def test_format_input
+  def test_format_input_query
     text = "Mastermind"
     @client.format_input_query(text)
     assert_equal("\n#{text}\n>\t", @client.stream.string)
   end
 
+  def test_colours
+    assert @client.colors
+    hash = {
+          "R" => :red,
+          "G" => :green,
+          "B" => :blue,
+          "Y" => :yellow,
+          "C" => :cyan,
+          "M" => :magenta
+        }
+
+    hash.each do |key, val|
+      assert_equal @client.colors[key], val
+    end
+  end
+
+  def test_set_output_stream
+    assert_equal STDOUT, @client.set_output_stream
+
+    %w[hello work come go].each do |i|
+      assert_equal i, @client.set_output_stream(i)
+    end
+  end
+
+  def test_output_file
+    file = [StringIO.new("Boss\nHello\n")]
+    assert_equal file, @client.output_file(file)
+  end
+
+  def test_output_top_ten
+    input = [{name: 'name', code: "rrrr", guess: 5, time: 60}]
+    assert_nil @client.output_top_ten("", input, Mastermind::Oscar::TimeManager.new)
+  end
+
+  def test_top_score_display_text
+    refute_nil @client.top_score_display_text("","","","","")
+  end 
 end

@@ -7,9 +7,9 @@
 /pkg/
 /spec/reports/
 /tmp/
-/files/advanced_record.txt
+/files/expert_record.txt
 /files/beginner_record.txt
 /files/intermediate_record.txt
 /files/top_ten_beginner.yaml
-/files/top_ten_advanced.yaml
+/files/top_ten_expert.yaml
 /files/top_ten_intermediate.yaml

@@ -6,6 +6,34 @@ class TimeManagerTest < Minitest::Test
    @client = Mastermind::Oscar::TimeManager.new
   end
 
+  def test_object
+    assert_instance_of(Mastermind::Oscar::TimeManager, @client)
+  end
+
+  def test_methods
+    mtds = :get_seconds, :to_string, :evaluate, :get_time, :stop_timer, :start_timer
+    mtds.each do |mtd|
+      assert_respond_to @client, mtd, "Doesn't repond to #{mtd}" 
+    end
+  end
+
+  def test_get_time
+    input = 1, 60, 18290, 86400, 86402
+    result = "1 second", "1 minute", "5 hours, 4 minutes, 50 seconds", "1 day", "1 day, 2 seconds"
+
+    input.each_with_index do |arg, i|
+      assert_equal result[i], @client.get_time(arg)
+    end
+  end
+
+  def test_get_seconds
+    @client.stub(:stop, 100) do 
+      @client.stub(:start, 14) do 
+        assert_equal 86, @client.get_seconds
+      end
+    end
+  end
+
   def test_start_timer
     @client.start_timer
     assert_in_delta(Time.now, @client.start)
@@ -37,5 +65,7 @@ class TimeManagerTest < Minitest::Test
     end
   end
 
-
+  def test_to_string_nil
+    assert_nil @client.to_string(0, '')
+  end
 end

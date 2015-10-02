@@ -698,3 +698,732 @@ Sequence: 		<YGBB>
 Name:	Dfdgd
  7:03am Sep 30, 2015
 Sequence: 		<YGGY>
+
+Name:	Oscar
+ 7:56am Sep 30, 2015
+Sequence: 		<GGRG>
+
+Name:	Oscar
+ 8:02am Sep 30, 2015
+Sequence: 		<GYBB>
+
+Name:	#<StringIO:0xbb44c94>
+ 9:41pm Sep 30, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9de8ec0>
+ 3:53pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa285794>
+ 3:53pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa7baffc>
+ 4:00pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa72a984>
+ 4:09pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb652240>
+ 4:10pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa1f651c>
+ 4:11pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xae62508>
+ 4:16pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f419fc>
+ 4:17pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xae5dee0>
+ 4:18pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa06e0c8>
+ 4:20pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa871e00>
+ 4:23pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa524f18>
+ 4:29pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbb41878>
+ 4:31pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb4013d8>
+ 4:34pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaee2848>
+ 4:34pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb2c10a4>
+ 4:37pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa1b704c>
+ 4:38pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbcef4e0>
+ 4:38pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa2893d0>
+ 4:39pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb0a1cb0>
+ 4:42pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa0e9430>
+ 4:44pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa9284fc>
+ 4:45pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9e49a40>
+ 4:46pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xade12c8>
+ 4:47pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbd52270>
+ 4:49pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa343d0c>
+10:20pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa69c558>
+10:30pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb488770>
+10:31pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad90b0c>
+10:32pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa46e45c>
+10:33pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb956ce8>
+10:33pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb8baff0>
+10:34pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa2c8120>
+10:47pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa3f2fc8>
+10:50pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb407cb0>
+10:51pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbb29980>
+10:59pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9ddccb0>
+11:01pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaa5fadc>
+11:02pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad82408>
+11:03pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa3a45a8>
+11:11pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa20ae54>
+11:12pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb61bd30>
+11:14pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb7b6564>
+11:15pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9fb12d4>
+11:17pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa650c0c>
+11:18pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9ed43fc>
+11:19pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaddf7d4>
+11:20pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa820988>
+11:22pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9ec0bf4>
+11:23pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb1fa33c>
+11:29pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa575cd8>
+11:30pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f85634>
+11:30pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9486abc>
+11:31pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa791364>
+11:32pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaa05014>
+11:33pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa7aa134>
+11:34pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbcf07dc>
+11:35pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x941b424>
+11:35pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9fabb7c>
+11:36pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xab5dc2c>
+11:40pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa7d2724>
+11:42pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa0bd90c>
+11:44pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x984d5d8>
+11:53pm Oct 01, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb2b47b4>
+12:03am Oct 02, 2015
+Sequence: 		<>
+
+Name:	
+12:03am Oct 02, 2015
+Sequence: 		<YRGG>
+
+Name:	#<StringIO:0xa907784>
+12:04am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb4c812c>
+12:06am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaa44c64>
+12:15am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa8123b0>
+12:18am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xafa91dc>
+12:19am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaa43d78>
+12:22am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa44f188>
+12:23am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa3c1e64>
+12:24am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa2925fc>
+12:24am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb664c74>
+12:27am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xba01a08>
+12:28am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa6cb7f4>
+12:30am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb7f9224>
+12:32am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa2ec174>
+12:36am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb95012c>
+12:37am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad33ec0>
+12:38am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb0b19e4>
+12:40am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa63c16c>
+12:43am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa009f60>
+12:44am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f19600>
+12:48am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb365884>
+12:49am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xae36ca0>
+12:49am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xae38e60>
+12:54am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa8a2e74>
+12:55am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9e5fe30>
+12:56am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa448dec>
+12:56am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb7f2104>
+12:57am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xac79228>
+12:59am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb32fe14>
+12:59am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9d2bf64>
+ 1:00am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbae6ea0>
+ 1:00am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb811068>
+ 1:01am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbb96c38>
+ 1:02am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa5eefd4>
+ 1:03am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa2afe7c>
+ 1:05am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9ddde30>
+ 1:09am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9dd3d54>
+ 1:09am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa1a5bf8>
+ 1:12am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad08e8c>
+ 1:13am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb393e64>
+ 1:14am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa8007f0>
+ 1:15am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa2e4fb4>
+ 1:16am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa0d0ac0>
+ 1:17am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa1731bc>
+ 1:18am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa62d748>
+ 1:19am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xba78d88>
+ 1:20am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f53d64>
+ 1:21am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb58ab14>
+ 1:21am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb55674c>
+ 1:22am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9d14288>
+ 1:22am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad11190>
+ 1:25am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9ea6b14>
+ 1:25am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb7769f0>
+ 1:25am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa6578f4>
+ 1:26am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9d58730>
+ 1:28am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa33a248>
+ 1:28am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb5cd978>
+ 1:29am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f48bf8>
+ 1:32am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xac89ac4>
+ 1:37am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb82e960>
+ 1:38am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb69ca5c>
+ 1:40am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa3dec1c>
+ 1:41am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbc2486c>
+ 1:45am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa1448bc>
+ 1:48am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb89721c>
+ 1:48am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb68c60c>
+ 1:49am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb4196a4>
+ 1:51am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb25eea4>
+ 1:51am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa42a324>
+ 1:52am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xae50b8c>
+ 1:54am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb265e84>
+ 1:58am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f87150>
+ 1:59am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb48afac>
+ 2:00am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb20af5c>
+ 2:01am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb1f772c>
+ 2:02am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x9f40494>
+ 2:04am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa841e58>
+ 2:05am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad68ddc>
+ 2:05am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad1d3b4>
+ 2:06am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa714314>
+ 2:06am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbd498f0>
+ 2:08am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa148908>
+ 2:13am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbadb0c8>
+ 2:13am Oct 02, 2015
+Sequence: 		<>
+
+Name:	Oscar testing with coveralls
+ 2:16am Oct 02, 2015
+Sequence: 		<BYYR>
+Guess 1:		ERRR
+Guess 2:		YBGR
+Guess 3:		YRGB
+Guess 4:		YBRG
+Guess 5:		GYBR
+Guess 6:		BYGR
+Guess 7:		YYGR
+Guess 8:		BYYR
+Guessed the sequence in: 1 minute, 40 seconds
+
+Name:	#<StringIO:0xb6915f8>
+ 2:18am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa97e26c>
+ 2:21am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb52ac00>
+ 2:23am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x8e3779c>
+ 2:24am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xae77ad4>
+ 2:26am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaa58fc0>
+ 2:26am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad6bcbc>
+ 2:27am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa981bec>
+ 2:27am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0x98fcab0>
+ 2:29am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xbbd0d48>
+ 2:30am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xab17998>
+ 2:30am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb56fecc>
+ 2:45am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa97a75c>
+ 2:46am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb0aa9dc>
+ 2:48am Oct 02, 2015
+Sequence: 		<>
+
+Name:	
+ 2:59am Oct 02, 2015
+Sequence: 		<GBBG>
+
+Name:	#<StringIO:0xb05a518>
+10:52am Oct 02, 2015
+Sequence: 		<>
+
+Name:	Illlllllll
+10:59am Oct 02, 2015
+Sequence: 		<RYBB>
+
+Name:	#<StringIO:0x99eea90>
+11:20am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa0d9670>
+11:23am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xb0e7ad0>
+11:24am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa5d6344>
+11:25am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa1e9768>
+11:29am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa87a334>
+11:31am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa9665e0>
+11:35am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xa8c9ba0>
+11:38am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xad856d0>
+11:39am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xaa43508>
+11:39am Oct 02, 2015
+Sequence: 		<>
+
+Name:	#<StringIO:0xba4b8ec>
+11:39am Oct 02, 2015
+Sequence: 		<>

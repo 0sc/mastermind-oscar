@@ -1,14 +1,22 @@
-Mastermind is an Awesomely difficult game to play!
-=================================================
+Playing Mastermind is pretty easy.
 
 ##Rules
 
-* To play the game, you will have to register and log in
-* To start a game, you will need to click "Play" from your dashboard
-* Computer will guess four pegs of two distinct colors (0101)
-* You will be presented with a set of select boxes - one box for each peg
-* Each select box will contain two numbers, representing colors (0 and 1)
-* You will guess a combination of pegs you believe to match computer's
-* After clicking "Submit", you will be shown the number of pegs you managed to guess
-* When you guessed all pegs, the game is over and you won
-* After 8 unsuccessful attempts, the game is over and you lost
+* Once the game starts, you have the option to either play, view instructions, view top ten scores or view score records
+* To play the game, enter p
+* To view instructions, enter i
+* To view top ten scores, enter t
+* To view score records, enter s
+* Once you enter p to play, your are given the option to select a difficulty level; beginner, intermediate or expert
+* You will be required to enter you name to aid in recording your score
+* Computer will generate a set of random characters made of colours. The lenght of the characters generated and the colours used depends on the game level.
+* For beginners, 4 characters consisting of red, blue, green and/or yellow. e.g. rbgy
+* For intermediate, 6 characters consisting of red, blue, green, yellow and/or cyan e.g. rrbyc
+* For expert, 8 characters consisting of red, blue, green, yellow, cyan and magenta e.g. bgrrgm
+* Note that colours can be repeated in the sequence
+* You are to guess the sequence by inputing the combination.
+* You will be given helpful feedback on each guess you make. Study the feedback to know the colours you were able to guess and their right position in the sequence.
+* After 12 unsuccessful attempts, the game is over and you lost
+* You can stop the game at any time by inputing q
+
+Have fun

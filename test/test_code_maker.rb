@@ -10,22 +10,148 @@ class CodemakerTest < Minitest::Test
     @client     = Mastermind::Oscar::Codemaker.new(difficulty,@recorder)
   end
 
-   def test_generate_code
-     diff = [:beginner, :intermediate, :advanced]
-     code_length = 4, 6, 8
-     diff.each_with_index do |lvl, i|
-        client   = Mastermind::Oscar::Codemaker.new(lvl,@recorder)
-        client.generate_code
-        assert_equal(code_length[i], client.code.length)
-     end
-  #   invalid_input_test
-   end
-   #allow(@client).to_receive(:get_input).and
+  def class_mtds
+    mtds = [:start, :generate_code, :init_message, :game_play, :analyze_input, :exact_match, :partial_match, :give_guess_feedback, :code, :timer, :difficulty, :recorder, :out_of_guess?, :quit?, :cheat?, :cheat, :difficulties, :colors, :create_color_string, :is_valid_input?, :congratulations, :congratulation_msg, :save_game, :game_over, :color_code, :guess_again]
+  end
+
+  def test_class_object
+    mtds = class_mtds
+    mtds.each do |mtd|
+      assert_respond_to @client, mtd, "Doesn't respond to #{mtd}"
+    end
+  end
+
+  def test_start
+    @client.stub(:generate_code, "") do 
+      @client.stub(:code, []) do 
+        @client.stub(:game_play, "xyzz") do 
+          assert_equal "xyzz", @client.start
+        end 
+      end
+    end
+  end
+
+  def test_initalization
+    assert_instance_of Mastermind::Oscar::Codemaker, @client
+  end
+
+  def test_difficulty
+    assert_equal :beginner, @client.difficulty
+  end
+
+  def test_recorder
+    assert_instance_of Mastermind::Oscar::RecordManager, @client.recorder
+  end
+
+  def test_generate_code
+    length = 4,8,6
+    [:beginner, :expert, :intermediate].each_with_index do |lvl, i|
+      obj = Mastermind::Oscar::Codemaker.new(lvl,@recorder)
+      obj.stub(:rand, 0) do 
+        obj.generate_code
+        assert_equal obj.code.length, length[i]
+        assert_equal obj.code.join, "R" * length[i]
+      end
+    end
+  end
+
+  def test_time_obj
+    if @client.timer
+      assert_instance_of Mastermind::Oscar::TimeManager, @client.timer
+    else
+      assert_nil @client.timer
+    end
+  end
 
   def test_init_message
-    @client.stub(:code, "") do
-      @client.stub(:)
-      @client.init_message
+    @client.stub(:code, 4) do 
+      assert_nil @client.init_message
+    end
+  end
+
+  def test_game_play_with_quit
+    @client.stub(:get_input, 'q') do 
+      assert_equal :quit, @client.game_play
+    end
+  end
+
+  def test_game_play_with_cheat
+    @client.stub(:get_input, "c") do 
+      @client.stub(:code, [1]) do
+        # @client.stub(:code,)
+        assert_nil @client.game_play
+      end
+    end
+  end
+
+  def test_game_play_with_valid_input
+    @client.stub(:get_input, "rrrr") do 
+      @client.stub(:is_valid_input?, true) do
+        @client.stub(:analyze_input, true) do 
+          @client.stub(:congratulation_msg, "") do
+            @client.stub(:save_game, "") do 
+              if @client.timer
+                assert_equal :won, @client.game_play
+              else
+                assert_raises(NoMethodError){@client.game_play}
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+
+  def test_game_play_with_wrong_input
+    @client.stub(:get_input, "rrrr") do 
+      @client.stub(:is_valid_input?, true) do
+        @client.stub(:analyze_input, false) do 
+          @client.stub(:game_over, :end) do 
+            assert_equal :end, @client.game_play
+          end
+        end
+      end
+    end
+  end
+
+  def test_get_input_valid
+    $stdin = StringIO.new("rrrr\n")
+    assert_equal "RRRR", @client.get_input($stdin)
+  end
+
+  def test_out_of_guess
+    10.times do 
+      a = rand(10)
+      b = rand(10)
+
+      a == b ? assert(@client.out_of_guess?(a, b)): refute(@client.out_of_guess?(a, b))
+    end
+  end
+
+  def test_valid_quit
+    input = %w{Q QUIT QUIET QUAYS QUEEN}
+    input.each {|i| assert @client.quit?(i)}
+  end
+
+  def test_invalid_quit
+    input = ('a'..'z').to_a
+    input.delete('q')
+    input.each {|i| refute @client.quit?(i)}
+  end
+
+  def test_valid_cheat
+    assert @client.cheat?('c')
+  end
+
+  def test_invalid_cheat
+    input = ('a'..'z').to_a
+    input.delete('c')
+    input.each {|i| refute @client.cheat?(i)}
+  end
+
+  def test_cheat 
+    @client.stub(:color_code, "") do
+      assert_nil @client.cheat
     end
   end
 
@@ -43,27 +169,26 @@ class CodemakerTest < Minitest::Test
     end
   end
 
-  def test_valid_quit
-    input = %w{Q QUIT QUIET QUAYS QUEEN}
-    input.each {|i| assert @client.quit?(i)}
+  def test_analyze_input_match
+    code = "RBGY"
+    @client.stub(:code, code) do 
+      if @client.guess
+        assert @client.analyze_input(code)
+      else
+        assert_raises(NoMethodError){@client.analyze_input(code)}
+      end
+    end
   end
 
-  def test_invalid_quit
-    input = ('a'..'z').to_a
-    input.delete('q')
-    input.each {|i| refute @client.quit?(i)}
-  end
-
-  def test_valid_cheat
-    input = %w{c cheat chair change call come}
-    input.each {|i| assert @client.cheat?(i)}
-
-  end
-
-  def test_invalid_cheat
-    input = ('a'..'z').to_a
-    input.delete('c')
-    input.each {|i| refute @client.cheat?(i)}
+  def test_analyze_input_no_match
+    code = "RRGG"
+    @client.stub(:code, code) do 
+      if @client.guess
+        refute @client.analyze_input(code)
+      else
+        assert_raises(NoMethodError){@client.analyze_input(code)}
+      end
+    end
   end
 
   def test_exact_match
@@ -78,7 +203,6 @@ class CodemakerTest < Minitest::Test
     code.each_with_index do |arr, index|
       assert_equal(expect[index], @client.exact_match(arr, input[index]))
     end
-
   end
 
   def test_partial_match
@@ -97,8 +221,60 @@ class CodemakerTest < Minitest::Test
     end
   end
 
-  def test_difficulties
-    diff = [:beginner, :intermediate, :advanced]
+  def test_give_guess_feedback
+    assert_nil @client.give_guess_feedback("","","")
+  end
+
+  def test_congratulations
+    if @client.timer
+      assert_equal :won, @client.congratulations
+    else
+      assert_raises(NoMethodError){@client.congratulations}
+    end 
+  end
+
+  def test_congratulation_msg
+    @client.stub(:code, []) do 
+      assert_nil @client.congratulation_msg("")
+    end
+  end
+
+  def test_save_game
+    @client.stub(:code, []) do 
+      if @client.guess
+        assert_nil @client.save_game(1234)
+      else
+        assert_raises(NoMethodError){@client.save_game(1234)}
+      end
+    end
+  end
+
+  def test_guess_again
+    assert_nil @client.guess_again
+  end
+
+  def test_color_code
+    @client.stub(:code, []) do 
+      assert_empty @client.color_code
+    end
+  end
+
+  def test_game_over
+    @client.stub(:code, []) do 
+      if @client.timer
+        assert_equal :end, @client.game_over
+      else
+        assert_raises(NoMethodError){@client.game_over}
+      end
+    end
+  end
+
+  def test_create_color_string
+    assert @client.create_color_string
+  end
+
+   def test_difficulties
+    diff = [:beginner, :intermediate, :expert]
     values=[4,4],[6,5],[8,6]
     diff.each_with_index do |d, i|
       assert_equal(values[i], @client.difficulties(d))

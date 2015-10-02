@@ -17,6 +17,7 @@ module Mastermind
       def set_user
         print "Awesome!, you want to play. Let's begin!\nMy name is Mastermind; What's is yours?\n>\t"
         @user = @stream.gets.chomp.capitalize
+        @user = "Anonymous" if @user.empty?
       end
 
       def open_save_file(difficulty)
@@ -89,7 +90,7 @@ module Mastermind
 
       def prep_hash(code, guess, time)
         {
-          name: @user,
+          name: user,
           code: code,
           guess: guess,
           time: time

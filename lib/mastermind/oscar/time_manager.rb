@@ -20,7 +20,7 @@ module Mastermind
         string << to_string(days, 'day')
         string << to_string(hour, 'hour')
         string << to_string(min, 'minute')
-        string << to_string(secs, 'sec')
+        string << to_string(secs, 'second')
         
         string.select!{|x| !x.nil?}
         string.join(", ")
@@ -31,7 +31,7 @@ module Mastermind
       end
 
       def get_seconds
-        @stop - @start
+        stop - start
       end
 
       def to_string(time, unit)

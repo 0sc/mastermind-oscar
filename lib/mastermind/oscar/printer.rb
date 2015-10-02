@@ -69,19 +69,22 @@ module Mastermind
         end        
       end
 
-      def self.output_top_ten(level, array,time_obj)puts level.upcase
+      def self.output_top_ten(level, array,time_obj)
+        puts level.upcase
         count = 1
         array.each do |entry|
           name = entry[:name]
           code = colour_letters(entry[:code])
           guess = entry[:guess]
           time = time_obj.get_time(entry[:time])
-          output(top_score_display_text(name,code,guess,time))
+          output(top_score_display_text(count,name,code,guess,time))
+          count += 1
         end
+        puts ""
       end
 
-      def self.top_score_display_text(name,code,guess,time)
-        "#{name} solved '#{code}' in #{guess} guesses over #{time}"
+      def self.top_score_display_text(count,name,code,guess,time)
+        "#{count}. #{name} solved '#{code}' in #{guess} guesses over #{time}"
       end
     end
   end
