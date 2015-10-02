@@ -21,7 +21,7 @@ require "mastermind/oscar"
 #   end
 # end
 
-# p "This is called"
+ p "This is called"
 # p Mastermind::Oscar.game_levels
 
 # exit
