@@ -9,5 +9,6 @@ module Mastermind
     end
   end
 end
-
+puts "called with #{$*}"
+exit
 Mastermind::Oscar.mastermind
