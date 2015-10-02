@@ -5,10 +5,12 @@ module Mastermind
   module Oscar
     extend self
     def mastermind
-      Mastermind::Oscar::GameManager.new.start_game
+      $*.empty? ? arg = nil : arg = Mastermind::Oscar.game_level($*.first[0]) 
+      game = Mastermind::Oscar::GameManager.new(arg)
+      game.start_game
     end
   end
 end
-puts "called with #{$*}"
+
 
 Mastermind::Oscar.mastermind

@@ -8,7 +8,8 @@ module Mastermind
 		class GameManager
       attr_reader :difficulty, :user
 
-      def initialize 
+      def initialize(diff = nil)
+        @difficulty = diff
         set_read_stream 
       end
 
@@ -43,6 +44,7 @@ module Mastermind
           elsif input == 'p'
             # play game
             status = game_on? play
+            @difficulty = nil
           else 
             alert_invalid_input
             status = !stub_for_test
@@ -66,6 +68,7 @@ module Mastermind
       end
 
       def set_difficulty
+        return if difficulty
         Printer.format_input_query <<-EOS
           Choose difficulty:
           (b)eginner
