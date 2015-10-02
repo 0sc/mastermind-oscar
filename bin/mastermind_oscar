@@ -3,25 +3,26 @@
 require "bundler/setup"
 require "mastermind/oscar"
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
+# # You can add fixtures and/or initialization code here to make experimenting
+# # with your gem easier. You can also use a different console, if you like.
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-# require "pry"
-# Pry.start
+# # (If you use this, don't forget to add pry to your Gemfile!)
+# # require "pry"
+# # Pry.start
 
-#require "irb"
-#IRB.start
-module Mastermind
-  module Oscar
-    extend self
-    def mastermind
-      GameManager.new.start_game
-    end
-  end
-end
+# #require "irb"
+# #IRB.start
+# module Mastermind
+#   module Oscar
+#     extend self
+#     def mastermind
+#       GameManager.new.start_game
+#     end
+#   end
+# end
 
+# p "This is called"
+# p Mastermind::Oscar.game_levels
 
-
-exit
-Mastermind::Oscar.mastermind
+# exit
+# Mastermind::Oscar.mastermind
