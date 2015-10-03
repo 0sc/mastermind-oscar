@@ -37,7 +37,7 @@ module Mastermind
             status = analyze_input(input)
             return congratulations if status
           end
-          Printer.output("You've taken #{guess} out of #{max_guess} guesses.\n")
+          Printer.output("\t\t\nYou've taken #{guess} out of #{max_guess} guesses.\n")
           guess_again
         end
 
@@ -110,7 +110,7 @@ module Mastermind
       end
 
       def cheat
-        Printer.output("The sequence is: #{color_code}")
+        Printer.show_cheat(color_code)
       end
 
       def generate_code
@@ -141,9 +141,7 @@ module Mastermind
 
       def init_message
         a = (difficulty == :beginner) ? 'a' : 'an'
-        Printer.output("Nice to meet you, #{@recorder.user}. \nOk, I have generated #{a} #{difficulty} sequence with #{code.size} elements made up of:")
-        Printer.output(create_color_string + ". [Enter (q)uit at any time to end the game.]")
-        Printer.format_input_query("Can you guess the sequence?")
+        Printer.greet_user(@recorder.user, a, difficulty, code.size, create_color_string)
       end
 
       def create_color_string
@@ -163,8 +161,8 @@ module Mastermind
         length = code.size
         return true if input.length == length
 
-        puts "Oops! Your input is too short" if input.length < length
-        puts "Oops! Your input is too long" if input.length > length
+        puts "\t" + Printer.colour_background("     !!!::: Oops! Your input is too short :::!!!", :red) if input.length < length
+        puts "\t" + Printer.colour_background("     !!!::: Oops! Your input is too long :::!!!", :red) if input.length > length
 
         false
       end
@@ -179,7 +177,7 @@ module Mastermind
       end
 
       def congratulation_msg(play_time)
-        Printer.output("Congratulations #{@recorder.user}!!! You guessed the sequence '#{color_code}' in #{guess} guesses over #{play_time}")
+        Printer.congratulations(@recorder.user,color_code, guess, play_time)
       end
 
       def save_game(play_time)
@@ -190,7 +188,7 @@ module Mastermind
 
       def game_over
         @timer.stop_timer
-        Printer.output("Game over! #{@recorder.user}, you've used up all your guesses. The sequence is '#{color_code}'.")
+        Printer.game_over(@recorder.user, color_code)
         @recorder.print_to_file("Game over! #{@timer.get_time}")
         @recorder.close
 
@@ -202,7 +200,7 @@ module Mastermind
       end
 
       def guess_again
-        Printer.format_input_query "Guess again:"
+        Printer.output "\t\t\tGuess again"
       end
 
     end

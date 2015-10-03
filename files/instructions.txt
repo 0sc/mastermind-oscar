@@ -7,7 +7,7 @@ Playing Mastermind is pretty easy.
 * To view instructions, enter i
 * To view top ten scores, enter t
 * To view score records, enter s
-* Once you enter p to play, your are given the option to select a difficulty level; beginner, intermediate or expert
+* Once you enter p to play, your are given the option to select a difficulty level; beginner, intermediate or expert. The level default to beginner for invalid choice.
 * You will be required to enter you name to aid in recording your score
 * Computer will generate a set of random characters made of colours. The lenght of the characters generated and the colours used depends on the game level.
 * For beginners, 4 characters consisting of red, blue, green and/or yellow. e.g. rbgy

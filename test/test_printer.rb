@@ -77,9 +77,7 @@ class PrinterTest < Minitest::Test
   end
 
   def test_format_input_query
-    text = "Mastermind"
-    @client.format_input_query(text)
-    assert_equal("\n#{text}\n>\t", @client.stream.string)
+    assert_nil @client.format_input_query
   end
 
   def test_colours
@@ -119,4 +117,40 @@ class PrinterTest < Minitest::Test
   def test_top_score_display_text
     refute_nil @client.top_score_display_text("","","","","")
   end 
+
+  def test_game_message
+    assert @client.game_message
+  end
+
+  def test_welcome_msg
+    assert_nil @client.welcome_msg
+  end
+
+  # # def test_level_select_msg
+  # #   assert_nil @client.level_select_msg
+  # # end
+
+  # def test_quit_msg
+  #   assert_nil @client.quit_msg(" ")
+  # end
+
+  # def test_greet_user
+  #   assert_nil @client.greet_user(" "," "," "," "," ")
+  # end
+
+  # def test_show_cheat
+  #   assert_nil @client.show_cheat("")
+  # end
+
+  # def test_line
+  #   assert_nil @client.line
+  # end
+
+  def test_game_over("", "")
+    assert_nil @client.game_over("")
+  end
+
+  def test_congratulations("", "","","")
+    assert_nil @client.congratulations("")
+  end
 end

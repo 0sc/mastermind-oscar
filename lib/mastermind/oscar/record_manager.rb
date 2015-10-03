@@ -15,7 +15,10 @@ module Mastermind
       end
 
       def set_user
-        print "Awesome!, you want to play. Let's begin!\nMy name is Mastermind; What's is yours?\n>\t"
+        print <<-EOS
+            \tAwesome!, you want to play. Let's begin!
+            \tMy name is Mastermind; what's is yours?
+            EOS
         @user = @stream.gets.chomp.capitalize
         @user = "Anonymous" if @user.empty?
       end

@@ -19,15 +19,15 @@ module Mastermind
       end
 
       def alert_invalid_input
-        Printer.format_input_query "Hmmm! You entry seems incorrect. Try again."
+        Printer.output "\tHmmm! You entry seems incorrect. Try again."
       end
 
       def start_game(stub_for_test=false)
-        puts "Welcome to MASTERMIND"
+        Printer.welcome_msg
         status = true
 
         while status
-          Printer.format_input_query "Would you like to (p)lay, read the (i)nstructions, view (t)op scores, view scores (r)ecords or (q)uit?"
+          Printer.format_input_query
 
           input = get_first_char
           if input == 'q'
@@ -51,7 +51,7 @@ module Mastermind
           end
         end
         @user ||= ''
-        puts "Thank you for playing, #{@user}\nCiao!!!"
+        Printer.quit_msg(user)
       end
 
       def play(allowed = true)
@@ -68,16 +68,8 @@ module Mastermind
       end
 
       def set_difficulty
-        return if difficulty
-        Printer.format_input_query <<-EOS
-          Choose difficulty:
-          (b)eginner
-          (i)ntermediate
-          (a)dvanced
-          Invalid input will default to beginner
-          You can (q)uit the game at any time
-        EOS
-
+        return true if difficulty
+        Printer.level_select_msg
         input = get_first_char
 
         return false if input.eql? 'q'
