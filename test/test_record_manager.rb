@@ -75,7 +75,7 @@ class RecordManagerTest < Minitest::Test
   def test_get_heros_file
     input = %w[beginner, expert, intermediate, hello, come]
     input.each do |i|
-      assert_equal "files/top_ten_#{i}.yaml", Mastermind::Oscar::RecordManager.get_heros_file(i)
+      assert Mastermind::Oscar::RecordManager.get_heros_file(i)
     end
   end
 
