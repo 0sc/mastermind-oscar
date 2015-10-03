@@ -115,7 +115,7 @@ module Mastermind
 
       def self.level_select_msg
         output <<-EOS
-                \t******* SET GAME DIFFICULTY *******
+              ******* SET GAME DIFFICULTY *******
                 * Enter b for beginner
                 * Enter i for intermediate
                 * Enter a for expert
