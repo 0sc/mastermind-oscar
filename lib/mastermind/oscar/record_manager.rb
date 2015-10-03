@@ -8,6 +8,7 @@ module Mastermind
         set_read_stream(stream)
         @user = user if user
         set_user unless user
+        Dir.mkdir("files") unless Dir.exist?("files")
 			end
 
       def file_path
@@ -111,13 +112,13 @@ module Mastermind
         
         files = []
         levels.each do |level|
-          files << File.open("files/"+level.to_s+"_record.txt", "r")
+          files << File.open("files/"+level.to_s+"_record.txt", "r+")
         end          
         files
       end
 
       def self.get_instructions
-        iFile = File.open("files/instructions.txt", "r")
+        iFile = File.open("files/instructions.txt", "r+")
         text = ''
         iFile.each_line do |line|
           text += line

@@ -1,7 +1,2 @@
 INTERMEDIATE
 ============
-
-Name:	Oscar test
-11:47pm Oct 02, 2015
-Sequence: 		<RRBCGR>
-Guess 1:		RRGGBY

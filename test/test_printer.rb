@@ -126,31 +126,31 @@ class PrinterTest < Minitest::Test
     assert_nil @client.welcome_msg
   end
 
-  # # def test_level_select_msg
-  # #   assert_nil @client.level_select_msg
-  # # end
-
-  # def test_quit_msg
-  #   assert_nil @client.quit_msg(" ")
-  # end
-
-  # def test_greet_user
-  #   assert_nil @client.greet_user(" "," "," "," "," ")
-  # end
-
-  # def test_show_cheat
-  #   assert_nil @client.show_cheat("")
-  # end
-
-  # def test_line
-  #   assert_nil @client.line
-  # end
-
-  def test_game_over("", "")
-    assert_nil @client.game_over("")
+  def test_level_select_msg
+    assert_nil @client.level_select_msg
   end
 
-  def test_congratulations("", "","","")
-    assert_nil @client.congratulations("")
+  def test_quit_msg
+    assert_nil @client.quit_msg(" ")
+  end
+
+  def test_greet_user
+    assert_nil @client.greet_user(" "," "," "," "," ")
+  end
+
+  def test_show_cheat
+    assert_nil @client.show_cheat("")
+  end
+
+  def test_line
+    assert_nil @client.line
+  end
+
+  def test_game_over
+    assert_nil @client.game_over("", "")
+  end
+
+  def test_congratulations
+    assert_nil @client.congratulations("", "","","")
   end
 end

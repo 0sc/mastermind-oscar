@@ -10,7 +10,9 @@ module Mastermind
 
       def initialize(diff = nil)
         @difficulty = diff
-        set_read_stream 
+        set_read_stream
+
+        RecordManager.new 
       end
 
       # useful for testing inputs
