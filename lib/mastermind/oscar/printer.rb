@@ -70,7 +70,7 @@ module Mastermind
       end
 
       def self.output_top_ten(level, array,time_obj)
-        puts "\t\t*****#{level.upcase}*****"
+        puts "\t\t*****#{level.upcase} Leaderboard*****"
         count = 1
         array.each do |entry|
           name = entry[:name]
