@@ -72,7 +72,7 @@ module Mastermind
       end
 
       def self.get_heros_file(difficulty)
-        "files/top_ten_#{difficulty}.yaml"
+        "#{file_path}top_ten_#{difficulty}.yaml"
       end
 
       def insert_in_top_ten(hero, position, array)
