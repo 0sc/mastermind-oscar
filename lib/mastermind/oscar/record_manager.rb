@@ -16,7 +16,8 @@ module Mastermind
       end
 
       def self.file_path
-        File.join(File.dirname(File.expand_path(__FILE__)), '../../../files/')
+        # File.join(File.dirname(File.expand_path(__FILE__)), '../../../files/')
+        "files/"
       end
 
       def set_user
