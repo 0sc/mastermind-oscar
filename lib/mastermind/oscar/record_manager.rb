@@ -12,7 +12,11 @@ module Mastermind
 			end
 
       def file_path
-        "files/"
+        RecordManager.file_path
+      end
+
+      def self.file_path
+        File.join(File.dirname(File.expand_path(__FILE__)), '../../../files/')
       end
 
       def set_user

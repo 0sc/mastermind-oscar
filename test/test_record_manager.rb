@@ -31,7 +31,11 @@ class RecordManagerTest < Minitest::Test
   end
 
   def test_file_path
-    assert_equal "files/", @client.file_path
+    assert_equal Mastermind::Oscar::RecordManager.file_path, @client.file_path
+  end
+
+  def test_class_file_path
+    assert Mastermind::Oscar::RecordManager.file_path
   end
 
   def test_open_save_file
