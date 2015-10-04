@@ -6,6 +6,7 @@ require "stringio"
 class RecordManagerTest < Minitest::Test
   def setup
     @client = Mastermind::Oscar::RecordManager.new(nil, StringIO.new("Adebayo\n"))
+    Mastermind::Oscar::RecordManager.create_save_files
   end
 
   def test_initialize
@@ -22,6 +23,10 @@ class RecordManagerTest < Minitest::Test
     mtds.each do |mtd|
       assert_respond_to @client, mtd
     end
+  end
+
+  def test_create_save_files
+    assert_nil Mastermind::Oscar::RecordManager.create_save_files
   end
 
   def test_set_user

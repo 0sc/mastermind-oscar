@@ -12,7 +12,7 @@ module Mastermind
         @difficulty = diff
         set_read_stream
 
-        RecordManager.new 
+        RecordManager.create_save_files
       end
 
       # useful for testing inputs

@@ -140,7 +140,11 @@ module Mastermind
   module Oscar
     class RecordManager
       def open_save_file(difficulty)
-        @input_file = File.open("files/test_record.txt","a+")
+        @input_file = File.open("files/test_record.txt","w+")
+      end
+      def self.get_heros_file(diff)
+        File.open("files/top_ten_test.yaml","w+")
+        "files/top_ten_test.yaml"
       end
     end
   end
