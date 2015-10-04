@@ -10,14 +10,12 @@ module Mastermind
 			end
       
       def self.create_save_files
-         if !Dir.exist?(file_path)
-          Dir.mkdir(file_path)
+         Dir.mkdir(file_path) unless Dir.exist?(file_path)
           level = Mastermind::Oscar.game_level.values
           level.each do |lvl|
             File.open("#{file_path}top_ten_#{lvl}.yaml","w+")
             File.open("#{file_path}#{lvl}_record.txt", "w+")
           end
-         end
       end
       
       def file_path
