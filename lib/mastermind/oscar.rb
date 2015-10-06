@@ -11,6 +11,3 @@ module Mastermind
     end
   end
 end
-
-
-Mastermind::Oscar.mastermind
