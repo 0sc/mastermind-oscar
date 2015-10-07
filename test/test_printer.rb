@@ -1,6 +1,4 @@
 require 'test_helper'
-require "mastermind/oscar/printer"
-require "stringio"
 
 class PrinterTest < Minitest::Test
   attr_reader :colors

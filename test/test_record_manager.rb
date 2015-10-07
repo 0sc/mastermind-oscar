@@ -1,12 +1,10 @@
 require 'test_helper'
-require "mastermind/oscar/record_manager"
-require "mastermind/oscar/game_manager"
-require "stringio"
 
 class RecordManagerTest < Minitest::Test
   def setup
-    @client = Mastermind::Oscar::RecordManager.new(nil, StringIO.new("Adebayo\n"))
-    Mastermind::Oscar::RecordManager.create_save_files
+    @record_class = Mastermind::Oscar::RecordManager
+    @client = @record_class.new(nil, StringIO.new("Adebayo\n"))
+    @record_class.create_save_files
   end
 
   def test_initialize
@@ -14,7 +12,7 @@ class RecordManagerTest < Minitest::Test
   end
 
   def test_object
-    assert_instance_of Mastermind::Oscar::RecordManager, @client
+    assert_instance_of @record_class, @client
   end
 
   def test_methods
@@ -26,7 +24,7 @@ class RecordManagerTest < Minitest::Test
   end
 
   def test_create_save_files
-    assert_nil Mastermind::Oscar::RecordManager.create_save_files
+    assert_equal(Mastermind::Oscar.game_level.values, @record_class.create_save_files)
   end
 
   def test_set_user
@@ -36,11 +34,11 @@ class RecordManagerTest < Minitest::Test
   end
 
   def test_file_path
-    assert_equal Mastermind::Oscar::RecordManager.file_path, @client.file_path
+    assert_equal @record_class.file_path, @client.file_path
   end
 
   def test_class_file_path
-    assert Mastermind::Oscar::RecordManager.file_path
+    assert @record_class.file_path
   end
 
   def test_open_save_file
@@ -80,7 +78,7 @@ class RecordManagerTest < Minitest::Test
   def test_get_heros_file
     input = %w[beginner, expert, intermediate, hello, come]
     input.each do |i|
-      assert Mastermind::Oscar::RecordManager.get_heros_file(i)
+      assert @record_class.get_heros_file(i)
     end
   end
 

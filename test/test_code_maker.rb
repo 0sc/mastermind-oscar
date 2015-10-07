@@ -1,7 +1,4 @@
 require 'test_helper'
-require "mastermind/oscar/codemaker"
-require "mastermind/oscar/time_manager"
-require "stringio"
 
 class CodemakerTest < Minitest::Test
   def setup

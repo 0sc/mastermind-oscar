@@ -1,5 +1,4 @@
 require 'test_helper'
-require "mastermind/oscar/time_manager"
 
 class TimeManagerTest < Minitest::Test
   def setup

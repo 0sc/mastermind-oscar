@@ -1,7 +1,4 @@
 require 'test_helper'
-require "mastermind/oscar/game_manager"
-require "mastermind/oscar/record_manager"
-require "stringio"
 
 class GameManagerTest < Minitest::Test
   def setup
