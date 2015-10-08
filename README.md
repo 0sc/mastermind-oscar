@@ -1,5 +1,5 @@
 # Mastermind::Oscar
-![coverage-badge](https://cdn.rawgit.com/andela-ooranagwa/mastermind-oscar/master/coverage/coverage.svg)
+[![coverage-badge](https://cdn.rawgit.com/andela-ooranagwa/mastermind-oscar/master/coverage/coverage.svg)](http://andela-ooranagwa.github.io/mastermind-oscar/coverage/#_AllFiles)
 
 Mastermind_Oscar is a Ruby implementation of the classic board game of same name. The game is a code breaking game between two players; in this implementation, it is between a player and the computer.
 
