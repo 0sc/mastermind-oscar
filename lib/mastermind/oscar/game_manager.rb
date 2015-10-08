@@ -11,7 +11,6 @@ module Mastermind
       def initialize(diff = nil)
         @difficulty = diff
         set_read_stream
-
         RecordManager.create_save_files
       end
 
@@ -27,10 +26,8 @@ module Mastermind
       def start_game(stub_for_test=false)
         Printer.welcome_msg
         status = true
-
         while status
           Printer.format_input_query
-
           input = get_first_char
           if input == 'q'
             break
@@ -47,7 +44,7 @@ module Mastermind
             # play game
             status = game_on? play
             @difficulty = nil
-          else 
+          else
             alert_invalid_input
             status = !stub_for_test
           end
@@ -57,10 +54,9 @@ module Mastermind
       end
 
       def play(allowed = true)
-        return :quit unless set_difficulty 
+        return :quit unless set_difficulty
         @recorder= RecordManager.new(user)
         @user = @recorder.user unless user
-
         codemaker = Codemaker.new(difficulty, @recorder)
         return codemaker.start if allowed
       end
@@ -73,15 +69,12 @@ module Mastermind
         return true if difficulty
         Printer.level_select_msg
         input = get_first_char
-
         return false if input.eql? 'q'
-
         @difficulty = Mastermind::Oscar.game_level(input)
       end
 
       def game_on? (arg)
         return false if arg == :quit
-
         show_top_10(@difficulty) if arg == :won
         return true
       end
@@ -96,17 +89,13 @@ module Mastermind
 
       def show_top_10 (level = nil)
         list = level.nil? ? Mastermind::Oscar.game_level.values : [level]
-        
         t_obj = TimeManager.new
-
         list.each do |lvl|
           lvl = lvl.to_s
           rec = RecordManager.get_top_ten(lvl)
           Printer.output_top_ten(lvl,rec,t_obj)
         end
-
       end
-
 		end
 
     def self.game_level(input = nil)
@@ -114,9 +103,7 @@ module Mastermind
       levels['a'] = :expert
       levels['i'] = :intermediate
       levels['b'] = :beginner
-
       return levels if input.nil?
-
       levels[input]
     end
 	end
