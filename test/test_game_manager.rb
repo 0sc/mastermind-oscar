@@ -36,7 +36,7 @@ class GameManagerTest < Minitest::Test
       assert_nil @game.start_game
     end
 
-    %w[t i r].each do |i|
+    %w[t i r m].each do |i|
       @game.stub(:get_first_char, i) do
         assert_nil @game.start_game(true)
       end
@@ -47,6 +47,8 @@ class GameManagerTest < Minitest::Test
         assert_nil @game.start_game
       end
     end
+
+
   end
 
   def test_get_first_char

@@ -143,10 +143,10 @@ class RecordManagerTest < Minitest::Test
   def test_get_heros_file
     input = %w[beginner expert intermediate hello come]
     path  = @record_class.file_path
-
     input.each do |i|
       assert_equal "#{path}top_ten_#{i}.yaml", @record_class.get_heros_file(i)
     end
+    assert @record_class.get_heros_file("")
   end
 
   def test_insert_in_top_ten

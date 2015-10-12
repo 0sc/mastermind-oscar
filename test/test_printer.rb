@@ -33,6 +33,10 @@ class PrinterTest < Minitest::Test
     refute_nil @client.stream
   end
 
+  def test_initialize
+    assert @client.new
+  end
+
   def test_output
   	assert_equal(@text, get_output(@text))
 
@@ -103,7 +107,7 @@ class PrinterTest < Minitest::Test
   end
 
   def test_output_file
-    file = [StringIO.new("Boss\nHello\n")]
+    file = [StringIO.new("Boss\nHello\t\trrgb\n")]
     assert_equal file, @client.output_file(file)
   end
 
@@ -114,7 +118,7 @@ class PrinterTest < Minitest::Test
 
   def test_top_score_display_text
     refute_nil @client.top_score_display_text("","","","","")
-  end 
+  end
 
   def test_game_message
     assert @client.game_message

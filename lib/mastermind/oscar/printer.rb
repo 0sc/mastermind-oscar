@@ -4,8 +4,8 @@ module Mastermind
   module Oscar
     class Printer
       @@stream = STDOUT
-      def self.initialize
-        set_output_stream
+      def initialize
+        self.class.set_output_stream
       end
 
       def self.output (content)

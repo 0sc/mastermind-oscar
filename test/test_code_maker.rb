@@ -176,12 +176,21 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_analyze_input_match
-    code = "RBGY"
+    code = %w{R B G Y}
+    correct_input = code.join
+    wrong_input = "xxxx"
     @client.stub(:code, code) do
       if @client.guess
-        assert @client.analyze_input(code)
+        assert @client.analyze_input(correct_input)
       else
-        assert_raises(NoMethodError){@client.analyze_input(code)}
+        assert_raises(NoMethodError){@client.analyze_input(correct_input)}
+      end
+
+      @client.stub(:guess, 4) do
+        @recorder.stub(:print_to_file, nil) do
+          assert @client.analyze_input(correct_input)
+          refute @client.analyze_input(wrong_input)
+        end
       end
     end
   end
@@ -237,6 +246,18 @@ class CodemakerTest < Minitest::Test
     else
       assert_raises(NoMethodError){@client.congratulations}
     end
+
+    @client.stub(:timer, Mastermind::Oscar::TimeManager.new) do
+      @client.timer.stub(:stop_timer, nil) do
+        @client.timer.stub(:get_time, 100) do
+          @client.stub(:congratulation_msg, nil) do
+            @client.stub(:save_game, nil) do
+              assert_equal :won, @client.congratulations
+            end
+          end
+        end
+      end
+    end
   end
 
   def test_congratulation_msg
@@ -251,6 +272,16 @@ class CodemakerTest < Minitest::Test
         assert_nil @client.save_game(1234)
       else
         assert_raises(NoMethodError){@client.save_game(1234)}
+      end
+
+      @recorder.stub(:print_to_file, nil) do
+        @recorder.stub(:check_for_top_ten, nil) do
+          @client.stub(:timer, Mastermind::Oscar::TimeManager.new) do
+            @client.timer.stub(:get_seconds, nil) do
+              assert_nil @client.save_game(1234)
+            end
+          end
+        end
       end
     end
   end
@@ -271,6 +302,19 @@ class CodemakerTest < Minitest::Test
         assert_equal :end, @client.game_over
       else
         assert_raises(NoMethodError){@client.game_over}
+      end
+
+      @client.stub(:timer, Mastermind::Oscar::TimeManager.new) do
+        timer = @client.timer
+        timer.stub(:stop_timer, nil) do
+          @client.stub(:color_code, "rrrr") do
+            @recorder.stub(:print_to_file, nil) do
+              timer.stub(:get_time, nil) do
+                assert_equal :end, @client.game_over
+              end
+            end
+          end
+        end
       end
     end
   end

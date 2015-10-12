@@ -8,7 +8,7 @@ module Mastermind
         @difficulty = difficulty
         @recorder   = recorder
       end
- 
+
       def start
         generate_code
         @timer = TimeManager.new
@@ -24,7 +24,7 @@ module Mastermind
         max_guess  = 12
         @guess     = 0
 
-        while !out_of_guess?(guess, max_guess) 
+        while !out_of_guess?(guess, max_guess)
           input = get_input
 
           if quit?(input)
@@ -42,7 +42,7 @@ module Mastermind
         end
 
         #Some one that is out of guesses
-        return game_over        
+        return game_over
       end
 
       def get_input(stream = STDIN)
@@ -61,7 +61,7 @@ module Mastermind
         exact = exact_match(code, input)
         partial = partial_match(code, input, exact)
         exact = exact.size
-        
+
         give_guess_feedback(input, exact, partial)
 
         false
@@ -128,8 +128,8 @@ module Mastermind
       def difficulties(key)
         #key => [characters, colors]
         specs = {
-          :beginner => [4, 4], 
-          :intermediate => [6, 5], 
+          :beginner => [4, 4],
+          :intermediate => [6, 5],
           :expert => [8, 6]
         }
         specs[key]
@@ -168,11 +168,10 @@ module Mastermind
       end
 
       def congratulations
-        @timer.stop_timer
-        play_time = @timer.get_time
+        timer.stop_timer
+        play_time = timer.get_time
         congratulation_msg(play_time)
         save_game(play_time)
-
         :won
       end
 
@@ -181,16 +180,16 @@ module Mastermind
       end
 
       def save_game(play_time)
-        @recorder.print_to_file("Guessed the sequence in: #{play_time}")
-        @recorder.check_for_top_ten(code.join, guess, @timer.get_seconds, difficulty.to_s)
-        @recorder.close
+        recorder.print_to_file("Guessed the sequence in: #{play_time}")
+        recorder.check_for_top_ten(code.join, guess, timer.get_seconds, difficulty.to_s)
+        recorder.close
       end
 
       def game_over
-        @timer.stop_timer
-        Printer.game_over(@recorder.user, color_code)
-        @recorder.print_to_file("Game over! #{@timer.get_time}")
-        @recorder.close
+        timer.stop_timer
+        Printer.game_over(recorder.user, color_code)
+        recorder.print_to_file("Game over! #{timer.get_time}")
+        recorder.close
 
         :end
       end
