@@ -2,11 +2,18 @@ require 'test_helper'
 
 class GameManagerTest < Minitest::Test
   def setup
+    FakeFS.activate!
+    FileUtils.mkdir_p('/tmp')
+
     @game = Mastermind::Oscar::GameManager.new
   end
 
+  def teardown
+    FakeFS.deactivate!
+  end
+
   def check_difficulty (input, expectation)
-  	input.each do |entry| 
+  	input.each do |entry|
   		@game.set_read_stream(StringIO.new("#{entry}\n"))
   		@game.set_difficulty
   		assert_equal(expectation, @game.difficulty)
@@ -25,18 +32,18 @@ class GameManagerTest < Minitest::Test
   end
 
   def test_start_game
-    @game.stub(:get_first_char, 'q') do 
+    @game.stub(:get_first_char, 'q') do
       assert_nil @game.start_game
     end
 
     %w[t i r].each do |i|
-      @game.stub(:get_first_char, i) do 
+      @game.stub(:get_first_char, i) do
         assert_nil @game.start_game(true)
       end
     end
 
-    @game.stub(:get_first_char, 'p') do 
-      @game.stub(:play, :quit) do 
+    @game.stub(:get_first_char, 'p') do
+      @game.stub(:play, :quit) do
         assert_nil @game.start_game
       end
     end
@@ -90,18 +97,18 @@ class GameManagerTest < Minitest::Test
     values = ['asds', 'bs', :start, 232]
     values.each{|val| assert @game.game_on?(val)}
 
-    @game.stub(:show_top_10, "") do 
+    @game.stub(:show_top_10, "") do
       assert @game.game_on? :won
-    end   
+    end
   end
 
   def test_play
-  	@game.stub(:set_difficulty, false) do 
+  	@game.stub(:set_difficulty, false) do
       assert_equal :quit, @game.play
     end
 
-    @game.stub(:set_difficulty, :beginner) do 
-      @game.stub(:user, "name") do 
+    @game.stub(:set_difficulty, :beginner) do
+      @game.stub(:user, "name") do
         refute @game.play(false)
       end
     end
@@ -125,24 +132,9 @@ class GameManagerTest < Minitest::Test
   def test_game_level
     input = 'a', 'b', 'i'
     exp = :expert, :beginner, :intermediate
-    exp << exp 
+    exp << exp
     input.each_with_index do |entry, i|
       assert_equal exp[i], Mastermind::Oscar.game_level(entry)
-    end
-  end
-end
-
-
-module Mastermind
-  module Oscar
-    class RecordManager
-      def open_save_file(difficulty)
-        @input_file = File.open("files/test_record.txt","w+")
-      end
-      def self.get_heros_file(diff)
-        File.open("files/top_ten_test.yaml","w+")
-        "files/top_ten_test.yaml"
-      end
     end
   end
 end

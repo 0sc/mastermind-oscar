@@ -32,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "colorize", "~> 0.7", ">= 0.7.7"
   spec.add_development_dependency 'simplecov', "~> 0.10", ">= 0.10.0" #, require: false
+  spec.add_development_dependency 'fakefs'#, "~> 0.10", ">= 0.10.0" #, require: false
   # spec.add_development_dependency 'simplecov-shield', github: 'aterris/simplecov-shield' #, "~> 0.1.0", ">= 0.1.0" #, require: false
 end

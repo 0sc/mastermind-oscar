@@ -2,13 +2,13 @@ require "yaml"
 module Mastermind
 	module Oscar
 		class RecordManager
-      attr_reader :user
-			
+      attr_reader :user, :input_file
+
       def initialize(name = nil, stream = STDIN)
         set_read_stream(stream)
         name.nil? ? set_user : @user = name
 			end
-      
+
       def self.create_save_files
          Dir.mkdir(file_path) unless Dir.exist?(file_path)
           level = Mastermind::Oscar.game_level.values
@@ -17,7 +17,7 @@ module Mastermind
             File.open("#{file_path}#{lvl}_record.txt", "w+")
           end
       end
-      
+
       def file_path
         RecordManager.file_path
       end
@@ -46,7 +46,7 @@ module Mastermind
       end
 
       def print_to_file (content)
-        @input_file.puts content
+        input_file.puts content
       end
 
       def initalize_file
@@ -56,7 +56,7 @@ module Mastermind
       end
 
       def close
-        @input_file.close if @input_file
+        input_file.close if input_file
       end
 
       def check_for_top_ten(code, guess, time, difficulty)
@@ -67,7 +67,7 @@ module Mastermind
 
         if position
           top_ten = insert_in_top_ten(prep_hash(code, guess, time), position, top_ten)
- 
+
           save_top_ten(top_ten, difficulty)
           return position
         end
@@ -89,7 +89,7 @@ module Mastermind
         shift = false
         limit  = array.size
         limit = (limit >= 10) ? limit : limit + 1
-        
+
         limit.times do
           if i == position
             new_arr << hero
@@ -114,18 +114,13 @@ module Mastermind
       end
 
       def self.get_records
-        #levels = []
-        #if difficulty
-         # levels << difficulty
-        #else
-          levels = Mastermind::Oscar.game_level
-          levels = levels.values
-        #end
-        
+        levels = Mastermind::Oscar.game_level
+        levels = levels.values
+
         files = []
         levels.each do |level|
-          files << File.open("files/"+level.to_s+"_record.txt", "r+")
-        end          
+          files << File.open("#{file_path}#{level.to_s}_record.txt", "r+")
+        end
         files
       end
 
@@ -159,7 +154,7 @@ Have fun
       def self.get_top_ten (difficulty)
         file = get_heros_file(difficulty)
         content = []
-        File.open(file, "r+") do |val| 
+        File.open(file, "r+") do |val|
           content = YAML::load(val)
         end
         content = [] if !content
@@ -174,7 +169,7 @@ Have fun
           if hero[:guess].to_i > guess
             return index
           elsif hero[:guess] == guess
-            return index if hero[:time] >time            
+            return index if hero[:time] >time
           end
         end
         nil

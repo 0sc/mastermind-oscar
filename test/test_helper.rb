@@ -2,6 +2,7 @@
 # Coveralls.wear!
 require 'simplecov'
 SimpleCov.start
+require 'fakefs/safe'
 require 'minitest/autorun'
 require 'minitest/reporters'
 require "simplecov-shield"

@@ -2,9 +2,18 @@ require 'test_helper'
 
 class CodemakerTest < Minitest::Test
   def setup
+    FakeFS.activate!
+    FileUtils.mkdir_p('/tmp')
+
     difficulty  = :beginner
-    @recorder   = Mastermind::Oscar::RecordManager.new(StringIO.new("Jeff\n"))
+    @recorder   = Mastermind::Oscar::RecordManager
+    @recorder.create_save_files
+    @recorder = @recorder.new(StringIO.new("Jeff\n"))
     @client     = Mastermind::Oscar::Codemaker.new(difficulty,@recorder)
+  end
+
+  def teardown
+    FakeFS.deactivate!
   end
 
   def class_mtds
@@ -19,11 +28,11 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_start
-    @client.stub(:generate_code, "") do 
-      @client.stub(:code, []) do 
-        @client.stub(:game_play, "xyzz") do 
+    @client.stub(:generate_code, "") do
+      @client.stub(:code, []) do
+        @client.stub(:game_play, "xyzz") do
           assert_equal "xyzz", @client.start
-        end 
+        end
       end
     end
   end
@@ -44,7 +53,7 @@ class CodemakerTest < Minitest::Test
     length = 4,8,6
     [:beginner, :expert, :intermediate].each_with_index do |lvl, i|
       obj = Mastermind::Oscar::Codemaker.new(lvl,@recorder)
-      obj.stub(:rand, 0) do 
+      obj.stub(:rand, 0) do
         obj.generate_code
         assert_equal obj.code.length, length[i]
         assert_equal obj.code.join, "R" * length[i]
@@ -61,19 +70,19 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_init_message
-    @client.stub(:code, 4) do 
+    @client.stub(:code, 4) do
       assert_nil @client.init_message
     end
   end
 
   def test_game_play_with_quit
-    @client.stub(:get_input, 'q') do 
+    @client.stub(:get_input, 'q') do
       assert_equal :quit, @client.game_play
     end
   end
 
   def test_game_play_with_cheat
-    @client.stub(:get_input, "c") do 
+    @client.stub(:get_input, "c") do
       @client.stub(:code, [1]) do
         # @client.stub(:code,)
         assert_nil @client.game_play
@@ -82,11 +91,11 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_game_play_with_valid_input
-    @client.stub(:get_input, "rrrr") do 
+    @client.stub(:get_input, "rrrr") do
       @client.stub(:is_valid_input?, true) do
-        @client.stub(:analyze_input, true) do 
+        @client.stub(:analyze_input, true) do
           @client.stub(:congratulation_msg, "") do
-            @client.stub(:save_game, "") do 
+            @client.stub(:save_game, "") do
               if @client.timer
                 assert_equal :won, @client.game_play
               else
@@ -100,10 +109,10 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_game_play_with_wrong_input
-    @client.stub(:get_input, "rrrr") do 
+    @client.stub(:get_input, "rrrr") do
       @client.stub(:is_valid_input?, true) do
-        @client.stub(:analyze_input, false) do 
-          @client.stub(:game_over, :end) do 
+        @client.stub(:analyze_input, false) do
+          @client.stub(:game_over, :end) do
             assert_equal :end, @client.game_play
           end
         end
@@ -117,7 +126,7 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_out_of_guess
-    10.times do 
+    10.times do
       a = rand(10)
       b = rand(10)
 
@@ -146,7 +155,7 @@ class CodemakerTest < Minitest::Test
     input.each {|i| refute @client.cheat?(i)}
   end
 
-  def test_cheat 
+  def test_cheat
     @client.stub(:color_code, "") do
       assert_nil @client.cheat
     end
@@ -154,21 +163,21 @@ class CodemakerTest < Minitest::Test
 
   def test_valid_input
     input = %w{RRRR RGBB}
-    @client.stub(:code, "RBGY") do 
+    @client.stub(:code, "RBGY") do
       input.each {|i| assert @client.is_valid_input?(i)}
     end
   end
 
   def test_invalid_input
-    input = %w{T K L O J E} << "A"*5 
-     @client.stub(:code, "RBGY") do 
+    input = %w{T K L O J E} << "A"*5
+     @client.stub(:code, "RBGY") do
       input.each {|i| refute @client.is_valid_input?(i)}
     end
   end
 
   def test_analyze_input_match
     code = "RBGY"
-    @client.stub(:code, code) do 
+    @client.stub(:code, code) do
       if @client.guess
         assert @client.analyze_input(code)
       else
@@ -179,7 +188,7 @@ class CodemakerTest < Minitest::Test
 
   def test_analyze_input_no_match
     code = "RRGG"
-    @client.stub(:code, code) do 
+    @client.stub(:code, code) do
       if @client.guess
         refute @client.analyze_input(code)
       else
@@ -227,17 +236,17 @@ class CodemakerTest < Minitest::Test
       assert_equal :won, @client.congratulations
     else
       assert_raises(NoMethodError){@client.congratulations}
-    end 
+    end
   end
 
   def test_congratulation_msg
-    @client.stub(:code, []) do 
+    @client.stub(:code, []) do
       assert_nil @client.congratulation_msg("")
     end
   end
 
   def test_save_game
-    @client.stub(:code, []) do 
+    @client.stub(:code, []) do
       if @client.guess
         assert_nil @client.save_game(1234)
       else
@@ -251,13 +260,13 @@ class CodemakerTest < Minitest::Test
   end
 
   def test_color_code
-    @client.stub(:code, []) do 
+    @client.stub(:code, []) do
       assert_empty @client.color_code
     end
   end
 
   def test_game_over
-    @client.stub(:code, []) do 
+    @client.stub(:code, []) do
       if @client.timer
         assert_equal :end, @client.game_over
       else
